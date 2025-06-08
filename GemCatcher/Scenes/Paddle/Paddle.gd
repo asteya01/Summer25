@@ -3,9 +3,10 @@ extends Area2D
 
 const SPEED: float = 600.0
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -14,8 +15,8 @@ func _process(delta: float) -> void:
 
 	position.x = clampf(
 		position.x,
-		get_viewport_rect().position.x,
-		get_viewport_rect().end.x
+		 Game.get_vpr().position.x,
+		 Game.get_vpr().end.x
 	)
 
 

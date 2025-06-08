@@ -15,6 +15,10 @@ run/main_scene="uid://deioh5jhwa0xh"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [editor]
 
 naming/scene_name_casing=1
