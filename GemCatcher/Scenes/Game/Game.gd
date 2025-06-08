@@ -61,7 +61,7 @@ func _on_paddle_area_entered(area: Area2D) -> void:
 		score_sound.position = area.position
 		score_sound.play()
 		score += 1
-		
+		$ScoreLabel.text = "0" + str(score).pad_zeros(2)
 
 func _on_gem_off_screen() -> void:
 	stop_all()
