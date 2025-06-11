@@ -1,8 +1,69 @@
-[gd_scene load_steps=3 format=3 uid="uid://dm1340c0qeeus"]
+[gd_scene load_steps=11 format=3 uid="uid://dm1340c0qeeus"]
 
+[ext_resource type="Script" uid="uid://de1xtlakwvoyf" path="res://Scenes/Main/Main.gd" id="1_o8wgc"]
 [ext_resource type="Texture2D" uid="uid://ch2oa4oh7m28p" path="res://assets/background/sky.png" id="1_p8rbg"]
+[ext_resource type="LabelSettings" uid="uid://ds6o7uh0x0p03" path="res://Resources/red_title_72.tres" id="2_cmk6n"]
+[ext_resource type="FontFile" uid="uid://j0j2y445cv1u" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="2_qtv3y"]
+[ext_resource type="AudioStream" uid="uid://drwrd73m3nosm" path="res://assets/audio/bgm_menu.mp3" id="4_i3fi7"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_p8rbg"]
+[sub_resource type="LabelSettings" id="LabelSettings_i3fi7"]
+font = ExtResource("2_qtv3y")
+font_size = 42
+font_color = Color(1, 0.921569, 1, 1)
+outline_size = 4
+outline_color = Color(1, 0.266667, 1, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.705882)
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cmk6n"]
+font = ExtResource("2_qtv3y")
+font_size = 30
+font_color = Color(0.632201, 0.354546, 2.88785e-07, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="Animation" id="Animation_cmk6n"]
+resource_name = "flash"
+length = 0.7
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SPACE TO PLAY:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.2, 0.3, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_i3fi7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SPACE TO PLAY:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o8wgc"]
+_data = {
+&"RESET": SubResource("Animation_i3fi7"),
+&"flash": SubResource("Animation_cmk6n")
+}
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -11,6 +72,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_o8wgc")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -22,15 +84,70 @@ grow_vertical = 2
 texture = ExtResource("1_p8rbg")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="."]
+[node name="TAPPY PLANE" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
+offset_left = -111.0
+offset_top = 52.0
+offset_right = 122.0
+offset_bottom = 201.0
 grow_horizontal = 2
 text = "TAPPY
 PLANE"
-label_settings = SubResource("LabelSettings_p8rbg")
+label_settings = ExtResource("2_cmk6n")
+
+[node name="SPACE TO PLAY" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -76.0
+offset_right = 124.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "press space
+           to 
+         play"
+label_settings = SubResource("LabelSettings_i3fi7")
+
+[node name="HIGHSCORE" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 33.0
+offset_top = -54.0
+offset_right = 125.0
+offset_bottom = -31.0
+grow_vertical = 0
+text = "HIGHSCORE:"
+label_settings = SubResource("LabelSettings_cmk6n")
+
+[node name="HIGHSCORE2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 391.0
+offset_top = -61.0
+offset_right = 539.0
+offset_bottom = -30.0
+grow_vertical = 0
+text = "000"
+label_settings = SubResource("LabelSettings_cmk6n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_o8wgc")
+}
+autoplay = "flash"
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_i3fi7")
+autoplay = true
