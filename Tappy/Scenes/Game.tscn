@@ -7,6 +7,7 @@
 [node name="Game" type="Node2D"]
 
 [node name="Rocks2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(215, 317)
 texture = ExtResource("1_ebmjs")
 
@@ -15,3 +16,15 @@ position = Vector2(92, 435)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("3_j5yw3")]
 position = Vector2(0, 2)
+
+[node name="PipesHolder" type="Node" parent="."]
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 1.2
+autostart = true
+
+[node name="UpperPoint" type="Marker2D" parent="."]
+position = Vector2(583, 310)
+
+[node name="LowerPoint" type="Marker2D" parent="."]
+position = Vector2(587, 573)
