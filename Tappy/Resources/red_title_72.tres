@@ -4,7 +4,7 @@
 
 [resource]
 font = ExtResource("1_owoi1")
-font_size = 72
+font_size = 42
 outline_size = 16
 outline_color = Color(0.896089, 0.130042, 0.286027, 1)
 shadow_size = 16
