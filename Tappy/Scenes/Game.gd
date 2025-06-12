@@ -9,6 +9,8 @@ const PIPES = preload("res://Scenes/Pipes/Pipes.tscn")
 @onready var lower_point: Marker2D = $LowerPoint
 
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	spawn_pipes()

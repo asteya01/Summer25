@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://c18ffbmk0tb2e"]
+
+[ext_resource type="Script" uid="uid://b8ymijoj8ndg8" path="res://Scenes/UI/UI.gd" id="1_b83rk"]
+[ext_resource type="LabelSettings" uid="uid://ds6o7uh0x0p03" path="res://Resources/red_title_72.tres" id="1_s86y4"]
+[ext_resource type="LabelSettings" uid="uid://dyob8b62cj3r3" path="res://Resources/Press/Main.tres" id="2_636u5"]
+[ext_resource type="FontFile" uid="uid://j0j2y445cv1u" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="3_akgwn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b83rk"]
+font = ExtResource("3_akgwn")
+font_size = 60
+font_color = Color(0.632201, 0.354546, 2.88785e-07, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(4, 4)
+
+[node name="UI" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b83rk")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 2.0
+offset_right = 179.0
+offset_bottom = 227.0
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+text = "000
+
+"
+label_settings = ExtResource("1_s86y4")
+
+[node name="Press" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -11.5
+offset_right = 23.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press "
+label_settings = ExtResource("2_636u5")
+
+[node name="GameOver" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -11.5
+offset_right = 43.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_b83rk")
