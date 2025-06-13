@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dgay1i1sasujk"]
 
 [ext_resource type="Texture2D" uid="uid://dhyg0ebvdkprt" path="res://Scenes/rocks_2.png" id="1_ebmjs"]
-[ext_resource type="Script" uid="uid://djxhjw1025b4k" path="res://Scenes/Game.gd" id="1_kldst"]
+[ext_resource type="Script" uid="uid://djxhjw1025b4k" path="res://Scenes/Game/Game.gd" id="1_kldst"]
 [ext_resource type="PackedScene" uid="uid://prj6uuqwydp3" path="res://Scenes/Plane/Plane.tscn" id="2_gl6un"]
 [ext_resource type="PackedScene" uid="uid://d0a7uudpk5ipg" path="res://Scenes/Barrier/Barrier.tscn" id="3_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://c18ffbmk0tb2e" path="res://Scenes/UI/UI.tscn" id="5_b2bpf"]
@@ -35,5 +35,4 @@ position = Vector2(524, 589)
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource("5_b2bpf")]
 
-[connection signal="on_plane_died" from="Plane" to="." method="on_plane_died"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

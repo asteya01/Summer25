@@ -13,6 +13,7 @@ const PIPES = preload("res://Scenes/Pipes/Pipes.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SignalHub.on_plane_died.connect(on_plane_died)
 	spawn_pipes()
 
 
