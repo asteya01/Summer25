@@ -15,11 +15,15 @@ run/main_scene="uid://dm1340c0qeeus"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalHub="*res://Globals/SignalHub.gd"
+GameManager="*res://Globals/GameManager.gd"
+
 [display]
 
 window/size/viewport_width=480
 window/size/viewport_height=854
-window/size/mode=1
 window/stretch/mode="canvas_items"
 
 [input]
