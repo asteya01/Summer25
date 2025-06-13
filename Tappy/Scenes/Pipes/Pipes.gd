@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var laser: Area2D = $Laser
 
 const SPEED: float = 120.0
 const OFF_SCREEN: float = 100.0
@@ -27,6 +28,14 @@ func _on_screen_exited() -> void:
 	print("_on_screen_exited")
 	die()
 
+
+
 func _on_pipe_body_entered(body: Node2D) -> void:
 	if body is Tappy:
 		body.die()
+
+
+func _on_laser_body_entered(body: Node2D) -> void:
+	if body is Tappy:
+		laser.body_entered.disconnect(_on_laser_body_entered)
+		SignalHub.emit_on_point_scored()
