@@ -1,0 +1,6 @@
+Day 1 of making and editing README's.
+
+  Today, I took a lunge deep into my code of Tappy Plane on Godot with the help of a course and a teacher to be able to email when I am stuck. 
+I fixed UI and coded a game over screen when I hit a pipe and then exactly 2 seconds after, a press space screen to start the main menu back and all over again.
+I coded a score with a cool font from the UI to increase when I hit the [CollisionShape2d] next to the laser, so when I go through the laser without hitting pipes, a point with 3 zeros is scored. 
+Adding a highscore was a real challenge for me, but I was able to do it, without any help. I then went through godot commands, and found the exact one for saving it to a file, so, even if I closed the game, it would save my previous highscore to a file which I could not find in any file for what it called [tappy.tres]. It was all in all awesome, and I only need to do a parallax scrolling background and maybe put some seperation between pipes.
