@@ -19,11 +19,13 @@ config/icon="res://icon.svg"
 
 SignalHub="*res://Globals/SignalHub.gd"
 GameManager="*res://Globals/GameManager.gd"
+ScoreManager="*res://Globals/ScoreManager.gd"
 
 [display]
 
 window/size/viewport_width=480
 window/size/viewport_height=854
+window/size/mode=1
 window/stretch/mode="canvas_items"
 
 [input]

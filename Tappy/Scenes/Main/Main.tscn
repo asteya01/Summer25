@@ -2,9 +2,17 @@
 
 [ext_resource type="Script" uid="uid://de1xtlakwvoyf" path="res://Scenes/Main/Main.gd" id="1_o8wgc"]
 [ext_resource type="Texture2D" uid="uid://ch2oa4oh7m28p" path="res://assets/background/sky.png" id="1_p8rbg"]
-[ext_resource type="LabelSettings" uid="uid://ds6o7uh0x0p03" path="res://Resources/red_title_72.tres" id="2_cmk6n"]
 [ext_resource type="AudioStream" uid="uid://drwrd73m3nosm" path="res://assets/audio/bgm_menu.mp3" id="4_i3fi7"]
 [ext_resource type="FontFile" uid="uid://j0j2y445cv1u" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="4_o8wgc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i3fi7"]
+font = ExtResource("4_o8wgc")
+font_size = 42
+outline_size = 16
+outline_color = Color(0.896089, 0.130042, 0.286027, 1)
+shadow_size = 16
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_w20t6"]
 font = ExtResource("4_o8wgc")
@@ -97,7 +105,7 @@ offset_bottom = 223.0
 grow_horizontal = 2
 text = "TAPPY
 PLANE"
-label_settings = ExtResource("2_cmk6n")
+label_settings = SubResource("LabelSettings_i3fi7")
 
 [node name="Tap TO PLAY" type="Label" parent="."]
 layout_mode = 1

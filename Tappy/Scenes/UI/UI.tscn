@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c18ffbmk0tb2e"]
+[gd_scene load_steps=7 format=3 uid="uid://c18ffbmk0tb2e"]
 
 [ext_resource type="Script" uid="uid://b8ymijoj8ndg8" path="res://Scenes/UI/UI.gd" id="1_b83rk"]
-[ext_resource type="LabelSettings" uid="uid://ds6o7uh0x0p03" path="res://Resources/red_title_72.tres" id="1_s86y4"]
+[ext_resource type="LabelSettings" uid="uid://pvrhfinc7kcc" path="res://Scenes/UI/UI.tres" id="2_b83rk"]
 [ext_resource type="FontFile" uid="uid://j0j2y445cv1u" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="3_akgwn"]
+[ext_resource type="AudioStream" uid="uid://drqiou2avr7w5" path="res://assets/audio/score.wav" id="3_b83rk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_akgwn"]
 font = ExtResource("3_akgwn")
@@ -40,7 +41,7 @@ theme_override_constants/margin_top = 24
 [node name="ScoreLabel" type="Label" parent="MarginContainer"]
 layout_mode = 2
 text = "000"
-label_settings = ExtResource("1_s86y4")
+label_settings = ExtResource("2_b83rk")
 
 [node name="PressLabel" type="Label" parent="."]
 visible = false
@@ -79,5 +80,8 @@ label_settings = SubResource("LabelSettings_b83rk")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_b83rk")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
