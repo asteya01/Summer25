@@ -27,7 +27,7 @@ position = Vector2(0, 2)
 [node name="PipesHolder" type="Node" parent="."]
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 1.2
+wait_time = 2.5
 autostart = true
 
 [node name="UpperPoint" type="Marker2D" parent="."]
