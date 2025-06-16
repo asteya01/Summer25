@@ -143,7 +143,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 
 func _on_sleeping_state_changed() -> void:
-	pass # Replace with function body.
+	pass
 
 
 func _on_body_entered(body: Node) -> void:
