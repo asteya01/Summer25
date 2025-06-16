@@ -15,6 +15,10 @@ run/main_scene="uid://bgex4dwlffyao"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalHub="*res://Globals/SignalHub.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"

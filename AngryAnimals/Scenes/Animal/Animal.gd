@@ -41,7 +41,6 @@ func setup() -> void:
 	_start = position
 	
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
 	update_state()
@@ -60,6 +59,12 @@ func update_debug_label() -> void:
 #endregion
 
 #region drag
+
+func update_arrow_scale() -> void:
+	var imp_len: float = calculate_impulse().length()
+	var perc: float = clamp(imp_len / IMPULSE_MAX, 0.0, 1.0)
+	arrow.scale.x = lerp(arrow_scale_x, arrow_scale_x * 2, perc)
+	arrow.rotation = (_start - position).angle()
 
 func start_dragging() -> void:
 	arrow.show()
@@ -80,6 +85,8 @@ func handle_dragging() -> void:
 	
 	_dragged_vector = new_drag_vector
 	position = _start + _dragged_vector
+	
+	update_arrow_scale()
 
 
 #endregion
@@ -121,13 +128,18 @@ func change_state(new_state: AnimalState) -> void:
 #endregion
 
 #region signals
+
+func die() -> void:
+	SignalHub.emit_on_animal_died()
+	queue_free()
+
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("drag") and _state == AnimalState.Ready:
 		start_dragging()
 		change_state(AnimalState.Drag)
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	pass # Replace with function body.
+	die()
 
 
 func _on_sleeping_state_changed() -> void:
