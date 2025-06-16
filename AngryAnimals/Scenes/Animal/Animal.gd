@@ -133,6 +133,7 @@ func die() -> void:
 	SignalHub.emit_on_animal_died()
 	queue_free()
 
+
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("drag") and _state == AnimalState.Ready:
 		start_dragging()
@@ -143,9 +144,14 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 
 func _on_sleeping_state_changed() -> void:
-	pass
+	if sleeping == true:
+		for body in get_colliding_bodies():
+			if body is Cup:
+				body.die()
+	call_deferred("die")
 
 
 func _on_body_entered(body: Node) -> void:
-	pass # Replace with function body.
+	if body is Cup and kick_sound.playing == false:
+		kick_sound.play()
 #endregion
