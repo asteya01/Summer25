@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://x7x18xehrk57"]
+
+[ext_resource type="Script" uid="uid://b4xbaxljj2jps" path="res://Scenes/GameUI/GameUi.gd" id="1_jwnss"]
+[ext_resource type="LabelSettings" uid="uid://btsyadj2ens3o" path="res://Resources/Yellow70.tres" id="2_81r78"]
+[ext_resource type="FontFile" uid="uid://sfpni75klxr0" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="3_556m7"]
+[ext_resource type="LabelSettings" uid="uid://bvqcjker2cgee" path="res://Resources/BlueRedBlack52.tres" id="4_jwnss"]
+[ext_resource type="AudioStream" uid="uid://1jgeumtuwhic" path="res://assets/audio/jazzyfrenchy.mp3" id="5_33k4q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_33k4q"]
+font = ExtResource("3_556m7")
+font_size = 40
+font_color = Color(0.905882, 0, 0, 1)
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 18
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lgqju"]
+font = ExtResource("3_556m7")
+font_size = 40
+font_color = Color(0.905882, 0, 0, 1)
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 18
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="GameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_jwnss")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="LevelLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level 1"
+label_settings = SubResource("LabelSettings_33k4q")
+
+[node name="AttemptsLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Attempt  #0"
+label_settings = SubResource("LabelSettings_lgqju")
+
+[node name="VBGameOver" type="VBoxContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="LevelCompleteLabel" type="Label" parent="MarginContainer/VBGameOver"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "YOU WIN!"
+label_settings = ExtResource("2_81r78")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelEscape" type="Label" parent="MarginContainer/VBGameOver/LevelCompleteLabel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.075
+anchor_bottom = 0.324
+offset_left = -235.0
+offset_top = 97.0
+offset_right = 493.025
+offset_bottom = 126.996
+text = "Press Esc. To go back to menu"
+label_settings = ExtResource("4_jwnss")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_33k4q")
+parameters/looping = true

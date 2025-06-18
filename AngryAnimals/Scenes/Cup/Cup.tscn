@@ -64,18 +64,22 @@ script = ExtResource("1_nfkcc")
 [node name="WoodSprites" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="WoodSprites"]
-position = Vector2(-72, -68)
+position = Vector2(-36, -34)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_1tkc5")
 
 [node name="Sprite2D2" type="Sprite2D" parent="WoodSprites"]
-position = Vector2(72, -68)
+position = Vector2(36, -34)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_1tkc5")
 flip_h = true
 
 [node name="Sprite2D3" type="Sprite2D" parent="WoodSprites"]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_jdgvp")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.5, 0.5)
 polygon = PackedVector2Array(-54, -55, -55, 17, 55, 17, 54, -54, 19, -18, -16, -17)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cbrocwfh8oty3" path="res://Scenes/LevelBase/LevelBase.gd" id="1_1l5ts"]
 [ext_resource type="Texture2D" uid="uid://vtvgu5tikqo" path="res://assets/scene/colored_castle.png" id="1_fe7a1"]
 [ext_resource type="PackedScene" uid="uid://biwd2ct6pj1tg" path="res://Scenes/Water/Water.tscn" id="3_2wk6i"]
-[ext_resource type="PackedScene" uid="uid://cbi05d7m88mkj" path="res://Scenes/Cup/Cup.tscn" id="4_fu0cx"]
+[ext_resource type="PackedScene" uid="uid://x7x18xehrk57" path="res://Scenes/GameUI/GameUi.tscn" id="5_kkf17"]
 
 [node name="LevelBase" type="Node2D"]
 script = ExtResource("1_1l5ts")
@@ -15,10 +15,13 @@ texture = ExtResource("1_fe7a1")
 centered = false
 
 [node name="AnimalStart" type="Marker2D" parent="."]
-position = Vector2(150, 415)
+position = Vector2(89, 468)
 
 [node name="Water" parent="." instance=ExtResource("3_2wk6i")]
 position = Vector2(8, 598)
 
-[node name="Cup" parent="." instance=ExtResource("4_fu0cx")]
-position = Vector2(351, 417)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameUI" parent="CanvasLayer" instance=ExtResource("5_kkf17")]
+offset_left = -3.0
+offset_right = -3.0

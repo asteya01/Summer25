@@ -3,7 +3,6 @@ extends RigidBody2D
 
 enum AnimalState { Ready, Drag, Release }
 
-
 const DRAG_LIM_MAX: Vector2 = Vector2(0, 60)
 const DRAG_LIM_MIN: Vector2 = Vector2(-60, 0)
 const IMPULSE_MULT: float = 20.0
@@ -102,6 +101,7 @@ func start_release() -> void:
 	launch_sound.play()
 	freeze = false
 	apply_central_impulse(calculate_impulse())
+	SignalHub.emit_on_attempt_made()
 
 #endregion
 
