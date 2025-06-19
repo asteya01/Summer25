@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4noifh05hdma"]
+[gd_scene load_steps=3 format=3 uid="uid://b4noifh05hdma"]
 
 [ext_resource type="Texture2D" uid="uid://dvl4ktj4at140" path="res://assets/images/backgroundEmpty.png" id="1_h6g34"]
+[ext_resource type="PackedScene" uid="uid://xoohan0jn41h" path="res://Scenes/Main/Main.tscn" id="2_o4rt4"]
 
 [node name="Master" type="Control"]
 layout_mode = 3
@@ -19,3 +20,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_h6g34")
 expand_mode = 1
+
+[node name="Main" parent="." instance=ExtResource("2_o4rt4")]
+layout_mode = 1

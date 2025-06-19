@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://xoohan0jn41h"]
+
+[ext_resource type="LabelSettings" uid="uid://cg4hpmc2n5dy3" path="res://Resources/title100memory_madness.tres" id="1_p8rbg"]
+[ext_resource type="PackedScene" uid="uid://bex7rxhr4b3by" path="res://Scenes/LevelButton/LevelButton.tscn" id="2_qtv3y"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0941176, 0.356863, 0.843137, 0.152941)
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 2
+offset_top = 70.0
+offset_right = 1024.0
+offset_bottom = 291.0
+text = "Memory 
+Madness"
+label_settings = ExtResource("1_p8rbg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 345.0
+offset_bottom = 345.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBLevelButtons" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 12
+
+[node name="LevelButton" parent="VBoxContainer/HBLevelButtons" instance=ExtResource("2_qtv3y")]
+layout_mode = 2
+
+[node name="LevelButton2" parent="VBoxContainer/HBLevelButtons" instance=ExtResource("2_qtv3y")]
+layout_mode = 2
+level_number = 2
+
+[node name="LevelButton3" parent="VBoxContainer/HBLevelButtons" instance=ExtResource("2_qtv3y")]
+layout_mode = 2
+level_number = 3
+
+[node name="LevelButton4" parent="VBoxContainer/HBLevelButtons" instance=ExtResource("2_qtv3y")]
+layout_mode = 2
+level_number = 4
+
+[node name="LevelButton5" parent="VBoxContainer/HBLevelButtons" instance=ExtResource("2_qtv3y")]
+layout_mode = 2
+level_number = 5
+
+[node name="LevelButton6" parent="VBoxContainer/HBLevelButtons" instance=ExtResource("2_qtv3y")]
+layout_mode = 2
+level_number = 6
+
+[node name="HboxSprites" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
