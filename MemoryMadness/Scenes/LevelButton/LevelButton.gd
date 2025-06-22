@@ -17,6 +17,6 @@ func _ready() -> void:
 		label.text = "%dx%d" % [ls.get_cols(), ls.get_rows()]
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+
+func _on_pressed() -> void:
+	pass # Replace with function body.

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://xoohan0jn41h"]
+[gd_scene load_steps=4 format=3 uid="uid://xoohan0jn41h"]
 
 [ext_resource type="LabelSettings" uid="uid://cg4hpmc2n5dy3" path="res://Resources/title100memory_madness.tres" id="1_p8rbg"]
 [ext_resource type="PackedScene" uid="uid://bex7rxhr4b3by" path="res://Scenes/LevelButton/LevelButton.tscn" id="2_qtv3y"]
+[ext_resource type="PackedScene" uid="uid://dp4j5w1xas5x3" path="res://Scenes/FrontSprite/FrontSprite.tscn" id="3_cmk6n"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -21,10 +22,15 @@ grow_vertical = 2
 color = Color(0.0941176, 0.356863, 0.843137, 0.152941)
 
 [node name="TitleLabel" type="Label" parent="."]
-layout_mode = 2
-offset_top = 70.0
-offset_right = 1024.0
-offset_bottom = 291.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -512.0
+offset_top = 50.0
+offset_right = 512.0
+offset_bottom = 271.0
+grow_horizontal = 2
 text = "Memory 
 Madness"
 label_settings = ExtResource("1_p8rbg")
@@ -70,4 +76,20 @@ layout_mode = 2
 level_number = 6
 
 [node name="HboxSprites" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="FrontSprite" parent="VBoxContainer/HboxSprites" instance=ExtResource("3_cmk6n")]
+layout_mode = 2
+
+[node name="FrontSprite2" parent="VBoxContainer/HboxSprites" instance=ExtResource("3_cmk6n")]
+layout_mode = 2
+
+[node name="FrontSprite3" parent="VBoxContainer/HboxSprites" instance=ExtResource("3_cmk6n")]
+layout_mode = 2
+
+[node name="FrontSprite4" parent="VBoxContainer/HboxSprites" instance=ExtResource("3_cmk6n")]
+layout_mode = 2
+
+[node name="FrontSprite5" parent="VBoxContainer/HboxSprites" instance=ExtResource("3_cmk6n")]
 layout_mode = 2

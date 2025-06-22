@@ -42,3 +42,5 @@ text = "0x0"
 label_settings = ExtResource("4_anpwf")
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

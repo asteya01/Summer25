@@ -5,9 +5,9 @@
 
 [sub_resource type="Resource" id="Resource_o0sab"]
 script = ExtResource("1_o0sab")
-level_number = 0
-rows = 0
-cols = 0
+level_number = 1
+rows = 2
+cols = 2
 metadata/_custom_type_script = "uid://cweb31717aftu"
 
 [sub_resource type="Resource" id="Resource_6cewc"]

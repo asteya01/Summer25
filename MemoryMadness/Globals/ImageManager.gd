@@ -17,7 +17,7 @@ func _enter_tree() -> void:
 		_image_list.append(load(file))
 
 
-func get_random_item_image() -> void:
+func get_random_item_image() -> Texture2D:
 	return _image_list.pick_random()
 
 
