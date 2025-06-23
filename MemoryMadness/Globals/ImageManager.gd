@@ -2,10 +2,10 @@ extends Node
 
 
 const FRAME_IMAGES: Array[Texture2D] = [
-	preload("res://assets/blue_frame.png"),
-	preload("res://assets/green_frame.png"),
-	preload("res://assets/red_frame.png"),
-	preload("res://assets/yellow_frame.png")
+	preload("res://assets/frames/blue_frame.png"),
+	preload("res://assets/frames/green_frame.png"),
+	preload("res://assets/frames/red_frame.png"),
+	preload("res://assets/frames/yellow_frame.png")
 ]
 
 var _image_list: Array[Texture2D]

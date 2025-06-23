@@ -21,31 +21,28 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0941176, 0.356863, 0.843137, 0.152941)
 
-[node name="TitleLabel" type="Label" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -512.0
-offset_top = 50.0
-offset_right = 512.0
-offset_bottom = 271.0
+anchor_bottom = 0.5
+offset_left = -414.0
+offset_top = -278.5
+offset_right = 414.0
+offset_bottom = 278.5
 grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 72
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
 text = "Memory 
 Madness"
 label_settings = ExtResource("1_p8rbg")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 345.0
-offset_bottom = 345.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="HBLevelButtons" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -78,6 +75,7 @@ level_number = 6
 [node name="HboxSprites" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/separation = 48
 
 [node name="FrontSprite" parent="VBoxContainer/HboxSprites" instance=ExtResource("3_cmk6n")]
 layout_mode = 2
