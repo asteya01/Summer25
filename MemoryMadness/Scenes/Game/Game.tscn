@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://daukdeo7ydpfp"]
 
 [ext_resource type="Script" uid="uid://becyfxkymom8u" path="res://Scenes/Game/Game.gd" id="1_3k6gv"]
-[ext_resource type="PackedScene" uid="uid://drpmk4g8ayghd" path="res://Scenes/MemoryTiles/MemoryTile.tscn" id="2_3k6gv"]
+[ext_resource type="PackedScene" uid="uid://dctuobcp6cf62" path="res://Scenes/Scorer/Scorer.tscn" id="2_3k6gv"]
 [ext_resource type="LabelSettings" uid="uid://b5syq62467agg" path="res://Resources/WhiteBlack4_3.tres" id="2_gwu2e"]
 [ext_resource type="Texture2D" uid="uid://dfkeu86lxi56j" path="res://assets/ui/grey_button00.png" id="3_y3kpf"]
 [ext_resource type="FontFile" uid="uid://ct3w7wbk164ca" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="5_3k6gv"]
@@ -32,22 +32,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="HB"]
+[node name="TileGrid" type="GridContainer" parent="HB"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 4
 columns = 6
-
-[node name="MemoryTile" parent="HB/GridContainer" instance=ExtResource("2_3k6gv")]
-layout_mode = 2
-
-[node name="MemoryTile2" parent="HB/GridContainer" instance=ExtResource("2_3k6gv")]
-layout_mode = 2
-
-[node name="MemoryTile3" parent="HB/GridContainer" instance=ExtResource("2_3k6gv")]
-layout_mode = 2
 
 [node name="MC" type="MarginContainer" parent="HB"]
 custom_minimum_size = Vector2(200, 0)
@@ -111,5 +102,7 @@ text = "Exit"
 label_settings = SubResource("LabelSettings_1q8bt")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Scorer" parent="." instance=ExtResource("2_3k6gv")]
 
 [connection signal="pressed" from="HB/MC/VB/ExitButton" to="." method="_on_exit_button_pressed"]

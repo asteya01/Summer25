@@ -1,13 +1,21 @@
 extends TextureButton
 
 
+class_name MemoryTile
+
+
 @onready var frame_image: TextureRect = $FrameImage
 @onready var item_image: TextureRect = $ItemImage
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	reveal(false)
+	
+
+func reveal(r: bool) -> void:
+	frame_image.visible = r
+	item_image.visible = r
 
 
 func setup(image: Texture2D, frame: Texture2D) -> void:
@@ -16,4 +24,6 @@ func setup(image: Texture2D, frame: Texture2D) -> void:
 
 
 func _on_pressed() -> void:
-	pass # Replace with function body.
+	if Scorer.SelectionEnabled == true:
+		reveal(true)
+		SignalHub.emit_on_tile_selected(self)
