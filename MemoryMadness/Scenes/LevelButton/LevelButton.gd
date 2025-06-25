@@ -5,6 +5,7 @@ extends TextureButton
 
 
 @onready var label: Label = $Label
+@onready var sound: AudioStreamPlayer = $Sound
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,3 +21,4 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	SignalHub.emit_on_level_selected(level_number)
+	SoundManager.play_button_click(sound)

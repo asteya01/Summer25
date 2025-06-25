@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://daukdeo7ydpfp"]
+[gd_scene load_steps=9 format=3 uid="uid://daukdeo7ydpfp"]
 
 [ext_resource type="Script" uid="uid://becyfxkymom8u" path="res://Scenes/Game/Game.gd" id="1_3k6gv"]
 [ext_resource type="PackedScene" uid="uid://dctuobcp6cf62" path="res://Scenes/Scorer/Scorer.tscn" id="2_3k6gv"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dfkeu86lxi56j" path="res://assets/ui/grey_button00.png" id="3_y3kpf"]
 [ext_resource type="FontFile" uid="uid://ct3w7wbk164ca" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="5_3k6gv"]
 [ext_resource type="Texture2D" uid="uid://yr4kve7i2xiy" path="res://assets/ui/yellow_button00.png" id="5_y3kpf"]
+[ext_resource type="PackedScene" uid="uid://c6ghl82xwx25t" path="res://Scenes/GameOverUi/GameOverUi.tscn" id="7_1q8bt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1q8bt"]
 font = ExtResource("5_3k6gv")
@@ -104,5 +105,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Scorer" parent="." instance=ExtResource("2_3k6gv")]
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+
+[node name="GameOverUi" parent="." instance=ExtResource("7_1q8bt")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="HB/MC/VB/ExitButton" to="." method="_on_exit_button_pressed"]

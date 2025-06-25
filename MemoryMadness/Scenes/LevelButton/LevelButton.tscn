@@ -41,6 +41,6 @@ grow_vertical = 2
 text = "0x0"
 label_settings = ExtResource("4_anpwf")
 
-[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+[node name="Sound" type="AudioStreamPlayer" parent="."]
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
