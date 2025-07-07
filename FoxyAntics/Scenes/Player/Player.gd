@@ -22,6 +22,11 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
+func _enter_tree() -> void:
+	add_to_group(Constants.PLAYER_GROUP)
+
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	velocity.y += GRAVITY * delta
