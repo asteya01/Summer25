@@ -19,12 +19,11 @@ func _physics_process(delta: float) -> void:
 	apply_jump()
 	move_and_slide()
 	flip_me()
+	
+	if is_on_floor() == true:
+		velocity.x = 0
+		animated_sprite_2d.play("idle")
 
-
-
-func flip_me() -> void:
-	animated_sprite_2d.flip_h = \
-		_player_ref.global_position.x > global_position.x
 
 
 func apply_jump() -> void:
