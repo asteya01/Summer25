@@ -26,7 +26,7 @@ func _ready() -> void:
 
 
 
-func flip_me() -> void:
+func flip_me() -> void: 
 	animated_sprite_2d.flip_h = \
 		_player_ref.global_position.x > global_position.x
 
@@ -39,6 +39,9 @@ func _physics_process(delta: float) -> void:
 
 
 func die() -> void:
+	SignalHub.emit_on_create_object(
+		global_position, Constants.ObjectType.EXPLOSION
+	)
 	set_physics_process(false)
 	queue_free()
 

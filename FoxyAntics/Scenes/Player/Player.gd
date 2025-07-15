@@ -9,6 +9,7 @@ class_name Player
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var debug_label: Label = $DebugLabel
+@onready var shooter: Shooter = $Shooter
 
 
 const GRAVITY: float = 690.0
@@ -24,6 +25,13 @@ func _ready() -> void:
 
 func _enter_tree() -> void:
 	add_to_group(Constants.PLAYER_GROUP)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("shoot") == true:
+		var dir: Vector2 = Vector2.LEFT if sprite_2d.flip_h else \
+					Vector2.RIGHT
+		shooter.shoot(dir)
 
 
 
