@@ -32,6 +32,7 @@ func shoot(direction: Vector2) -> void:
 		bullet_key
 	)
 	shoot_timer.start()
+	sound.play()
 
 
 func _on_shoot_timer_timeout() -> void:

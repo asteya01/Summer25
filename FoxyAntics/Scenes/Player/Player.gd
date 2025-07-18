@@ -8,8 +8,8 @@ class_name Player
 
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var debug_label: Label = $DebugLabel
 @onready var shooter: Shooter = $Shooter
+@onready var sound: AudioStreamPlayer2D = $Sound
 
 
 const GRAVITY: float = 690.0
@@ -41,6 +41,7 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor() and Input.is_action_just_pressed("jump") == true:
 		velocity.y = JUMP_SPEED
+		sound.play()
 		
 	velocity.x = RUN_SPEED * Input.get_axis("left", "right")
 	if velocity.x != 0:
@@ -49,16 +50,8 @@ func _physics_process(delta: float) -> void:
 	velocity.y = clampf(velocity.y, JUMP_SPEED, MAX_FALL)
 	
 	move_and_slide()	
-	update_debug_label()	
 	fallen_off()
 	
-
-func update_debug_label() -> void:
-	var ds: String = ""
-	ds += "is_on_floor: %s\n" % [is_on_floor()]
-	ds += "%.1f, %.1f\n" % [velocity.x, velocity.y]
-	ds += "%.1f, %.1f" % [global_position.x, global_position.y]
-	debug_label.text = ds
 
 func fallen_off() -> void:
 	if global_position.y > fell_off_y:

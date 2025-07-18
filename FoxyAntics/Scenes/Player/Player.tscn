@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://be1gk8hiqhyho"]
+[gd_scene load_steps=31 format=3 uid="uid://be1gk8hiqhyho"]
 
 [ext_resource type="Script" uid="uid://bqr6bmvlg7hda" path="res://Scenes/Player/Player.gd" id="1_ft8w5"]
 [ext_resource type="Texture2D" uid="uid://cgaufkkq0l4p1" path="res://assets/player/player.png" id="1_s0eop"]
 [ext_resource type="PackedScene" uid="uid://boiqha8vg5p7o" path="res://Scenes/PlayerCam/PlayerCam.tscn" id="3_h54ih"]
 [ext_resource type="PackedScene" uid="uid://bxs3sovt53hl6" path="res://Scenes/Shooter/Shooter.tscn" id="4_ude3g"]
+[ext_resource type="AudioStream" uid="uid://lbq55i1ovyrk" path="res://assets/sound/jump.wav" id="5_jmcll"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s0eop"]
 radius = 5.0
@@ -188,7 +189,7 @@ states/Air/position = Vector2(614, 99)
 states/Grounded/node = SubResource("AnimationNodeStateMachine_825xp")
 states/Grounded/position = Vector2(427, 100.75)
 transitions = ["Start", "Grounded", SubResource("AnimationNodeStateMachineTransition_ude3g"), "Grounded", "Air", SubResource("AnimationNodeStateMachineTransition_ji083"), "Air", "Grounded", SubResource("AnimationNodeStateMachineTransition_0kmp4")]
-graph_offset = Vector2(-20, 33)
+graph_offset = Vector2(101, -18)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h54ih"]
 radius = 6.0
@@ -220,17 +221,6 @@ tree_root = SubResource("AnimationNodeStateMachine_t26db")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="DebugLabel" type="Label" parent="."]
-offset_left = -11.0
-offset_top = -43.0
-offset_right = 263.0
-offset_bottom = 359.0
-scale = Vector2(0.0834038, 0.0834038)
-theme_override_font_sizes/font_size = 96
-text = "0000
-00000
-00000"
-
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 0
@@ -242,3 +232,6 @@ shape = SubResource("CapsuleShape2D_h54ih")
 [node name="Shooter" parent="." instance=ExtResource("4_ude3g")]
 speed = 250.0
 shoot_delay = 1.0
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_jmcll")
