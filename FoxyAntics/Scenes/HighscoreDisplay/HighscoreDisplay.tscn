@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dtha14qxvijhj"]
+
+[node name="HighscoreDisplay" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LabelScore" type="Label" parent="."]
+layout_mode = 2
+
+[node name="LabelTime" type="Label" parent="."]
+layout_mode = 2

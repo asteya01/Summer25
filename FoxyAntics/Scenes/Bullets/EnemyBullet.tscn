@@ -5,6 +5,8 @@
 [ext_resource type="Shape2D" uid="uid://hkaij8bqeglx" path="res://Resources/BulletShape.tres" id="3_r3k85"]
 
 [node name="EnemyBullet" instance=ExtResource("1_rluuw")]
+collision_layer = 16
+collision_mask = 2
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_opi75")
