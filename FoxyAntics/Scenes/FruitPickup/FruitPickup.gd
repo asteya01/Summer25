@@ -21,6 +21,7 @@ func _on_area_entered(area: Area2D) -> void:
 	hide()
 	set_deferred("monitoring", false)
 	sound.play()
+	SignalHub.on_scored.emit(points)
 
 
 func _on_sound_finished() -> void:
