@@ -3,10 +3,9 @@
 [ext_resource type="Script" uid="uid://def7fhy7ylttd" path="res://Scenes/LevelBase/LevelBase.gd" id="1_3lxj6"]
 [ext_resource type="Texture2D" uid="uid://bb0nxwc0wg7q4" path="res://assets/tiles/Terrain (16x16).png" id="1_5ufo3"]
 [ext_resource type="PackedScene" uid="uid://be1gk8hiqhyho" path="res://Scenes/Player/Player.tscn" id="2_78m1b"]
-[ext_resource type="PackedScene" uid="uid://ddh068nxt71um" path="res://Scenes/Enemies/Snail/Snail.tscn" id="4_lmtt4"]
 [ext_resource type="PackedScene" uid="uid://dp623us4w4480" path="res://Scenes/ObjectMaker/ObjectMaker.tscn" id="5_lmtt4"]
 [ext_resource type="AudioStream" uid="uid://uxfamcj5lc8m" path="res://assets/sound/Flowing Rocks.ogg" id="6_ooqsx"]
-[ext_resource type="PackedScene" uid="uid://by8vefsa7r1i3" path="res://Scenes/Enemies/Eagle/Eagle.tscn" id="7_txgif"]
+[ext_resource type="PackedScene" uid="uid://cvlc54gsb5fs4" path="res://Scenes/MovingPlatformPf/MovingPlatformPf.tscn" id="7_txgif"]
 [ext_resource type="PackedScene" uid="uid://b0ky3j05gwqeb" path="res://Scenes/Hud/Hud.tscn" id="8_o536s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bgw71"]
@@ -207,6 +206,12 @@ texture = ExtResource("1_5ufo3")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_bgw71")
 
+[sub_resource type="Curve2D" id="Curve2D_o536s"]
+_data = {
+"points": PackedVector2Array(109.05, -21.3749, -109.05, 21.3749, 154, -42, -8.47561, 54.9908, 8.47561, -54.9908, 151, -178, -1.25345, -29.7953, 1.25345, 29.7953, 99.262, -183.281, 146.283, -54.5042, -146.283, 54.5042, 10, -187, 0, 0, 0, 0, 154, -42)
+}
+point_count = 5
+
 [node name="LevelBase" type="Node2D"]
 script = ExtResource("1_3lxj6")
 
@@ -220,23 +225,20 @@ position = Vector2(53, -31)
 
 [node name="ObjectMaker" parent="." instance=ExtResource("5_lmtt4")]
 
-[node name="Snail" parent="." instance=ExtResource("4_lmtt4")]
-position = Vector2(216, -25)
-
-[node name="Snail2" parent="." instance=ExtResource("4_lmtt4")]
-position = Vector2(5, -71)
-
-[node name="Snail3" parent="." instance=ExtResource("4_lmtt4")]
-position = Vector2(-115, -88)
-
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ooqsx")
 autoplay = true
 parameters/looping = true
 
-[node name="Eagle" parent="." instance=ExtResource("7_txgif")]
-position = Vector2(126, -237)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hud" parent="CanvasLayer" instance=ExtResource("8_o536s")]
+
+[node name="BallSpikesHolder" type="Node" parent="."]
+
+[node name="Path2D" type="Path2D" parent="BallSpikesHolder"]
+curve = SubResource("Curve2D_o536s")
+
+[node name="MovingPlatformPf" parent="BallSpikesHolder/Path2D" instance=ExtResource("7_txgif")]
+position = Vector2(154, -42)
+speed = 70.0

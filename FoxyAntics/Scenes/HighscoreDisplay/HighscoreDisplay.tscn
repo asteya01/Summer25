@@ -11,7 +11,7 @@ script = ExtResource("1_8ewd1")
 
 [node name="ScoreLabel" type="Label" parent="."]
 layout_mode = 2
-text = "00000"
+text = "000"
 label_settings = ExtResource("1_hp87i")
 horizontal_alignment = 1
 vertical_alignment = 1
