@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8w1x7r4myhr4"]
+
+[ext_resource type="Script" uid="uid://c8cclwu2g5qt5" path="res://scripts/torch.gd" id="1_f64vx"]
+[ext_resource type="Texture2D" uid="uid://ih0ig3w7ifqa" path="res://textures/torch.png" id="1_ppfua"]
+[ext_resource type="Texture2D" uid="uid://be6vt0yau5dra" path="res://textures/2d_lights_and_shadows_neutral_point_light.png" id="2_eqjmj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gqtet"]
+radius = 4.0
+height = 18.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ukj6l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ppfua")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="torch" type="Area2D"]
+script = ExtResource("1_f64vx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_gqtet")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_ukj6l")
+autoplay = "default"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.976471, 0.584314, 0.129412, 1)
+shadow_enabled = true
+texture = ExtResource("2_eqjmj")
+texture_scale = 0.5
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

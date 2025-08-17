@@ -1,0 +1,3522 @@
+[gd_scene load_steps=68 format=3 uid="uid://cwr65be7sraem"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_afl1v"]
+[ext_resource type="Texture2D" uid="uid://ctx0riyljempg" path="res://textures/actionbar.png" id="1_p3smb"]
+[ext_resource type="Texture2D" uid="uid://cfcvvscnq63vy" path="res://textures/actionbar_selected.png" id="3_xvcdo"]
+[ext_resource type="Texture2D" uid="uid://ceh6kcvkydlps" path="res://textures/joao-francisco-tanini-figueiredo-steve-minecraft-player-3.png" id="6_0rp0o"]
+[ext_resource type="AudioStream" uid="uid://bjkej00teylr8" path="res://sounds/chest/chestopen.wav" id="7_syjx7"]
+[ext_resource type="AudioStream" uid="uid://bsj5pvjpjhb3o" path="res://sounds/chest/chestclosed.wav" id="8_3tuke"]
+[ext_resource type="Texture2D" uid="uid://b52nqyujlx5mb" path="res://textures/inventory.png" id="8_l6hej"]
+[ext_resource type="Texture2D" uid="uid://coxhuuv4vur00" path="res://textures/chest_single.png" id="9_du2qu"]
+[ext_resource type="Texture2D" uid="uid://muv7iick1vf0" path="res://textures/xp_bar.png" id="10_ad4sl"]
+[ext_resource type="Texture2D" uid="uid://cfd28x5jy1d40" path="res://textures/inventory_selected.png" id="10_b5oe1"]
+[ext_resource type="Texture2D" uid="uid://dyopmfcl8atjq" path="res://textures/heart_empty.png" id="11_013jg"]
+[ext_resource type="Texture2D" uid="uid://q6pwd5w2yqlp" path="res://textures/crafting_table_frame.png" id="12_l5npx"]
+[ext_resource type="Texture2D" uid="uid://2hu755ftk2v3" path="res://textures/heart_full.png" id="12_r3bsj"]
+[ext_resource type="Texture2D" uid="uid://bjb5p101nl47k" path="res://textures/food_empty.png" id="13_t43r7"]
+[ext_resource type="Texture2D" uid="uid://sj2qwb6lbo5k" path="res://textures/heart_half.png" id="14_r1sb7"]
+[ext_resource type="Texture2D" uid="uid://dbm1ose8rtkfc" path="res://textures/food_full.png" id="14_uqryb"]
+[ext_resource type="AudioStream" uid="uid://boja336j1lyyj" path="res://sounds/music/calm1.mp3" id="16_rakr5"]
+[ext_resource type="Texture2D" uid="uid://ctvbu5ln8v2wp" path="res://textures/dpad_base.png" id="17_o5e4m"]
+[ext_resource type="Texture2D" uid="uid://77hxoh43l1p2" path="res://textures/dpad_down.png" id="18_0mqnm"]
+[ext_resource type="Texture2D" uid="uid://brtb6negkla2e" path="res://textures/button_red.png" id="18_1st0s"]
+[ext_resource type="Texture2D" uid="uid://cm5cmrqhuw4qv" path="res://textures/dpad_left.png" id="19_7pcp8"]
+[ext_resource type="Texture2D" uid="uid://c1amqn3ycrois" path="res://textures/dpad_right.png" id="20_6c3t8"]
+[ext_resource type="Texture2D" uid="uid://dk0b58o1hxcon" path="res://textures/dpad_up.png" id="21_huagj"]
+[ext_resource type="Texture2D" uid="uid://bbdb0yv0b3w4y" path="res://textures/button_gray.png" id="23_1k6qc"]
+[ext_resource type="Texture2D" uid="uid://bf8ueubh5fnwx" path="res://textures/button_yellow.png" id="23_he4qc"]
+[ext_resource type="Texture2D" uid="uid://dtalfnj31twwc" path="res://textures/button_blue.png" id="24_yem7f"]
+[ext_resource type="Texture2D" uid="uid://2gpuxv5hy78i" path="res://textures/button_green.png" id="25_7e06i"]
+[ext_resource type="Texture2D" uid="uid://bm7e0d828lacf" path="res://textures/button_pill_alt.png" id="25_cbtfe"]
+[ext_resource type="Texture2D" uid="uid://dvkfce4mygul0" path="res://textures/button_l.png" id="27_0m8ok"]
+[ext_resource type="Texture2D" uid="uid://bjit5embfdkl1" path="res://textures/button_r.png" id="28_x6iea"]
+[ext_resource type="Texture2D" uid="uid://b74vkuwip3uv3" path="res://textures/button_pill.png" id="29_j4ckb"]
+[ext_resource type="Texture2D" uid="uid://dfvmdk6smiobq" path="res://textures/button_keycap.png" id="30_q8rxm"]
+[ext_resource type="Texture2D" uid="uid://ej3ubkun6c7m" path="res://textures/touch_arrow_up.png" id="31_871yx"]
+[ext_resource type="Texture2D" uid="uid://c7n5d7oqhdakq" path="res://textures/button_keycap_double.png" id="31_xyeyu"]
+[ext_resource type="Texture2D" uid="uid://bf46qnflnyvuu" path="res://textures/clock/clock_50.png" id="35_7ibda"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1o1vr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8efae"]
+font_size = 24
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kg5ns"]
+atlas = ExtResource("6_0rp0o")
+region = Rect2(1152, 435, 384, 435)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_os0df"]
+atlas = ExtResource("6_0rp0o")
+region = Rect2(1536, 435, 384, 435)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_671vt"]
+atlas = ExtResource("6_0rp0o")
+region = Rect2(0, 870, 384, 435)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sc76"]
+atlas = ExtResource("6_0rp0o")
+region = Rect2(384, 870, 384, 435)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ea4ui"]
+atlas = ExtResource("6_0rp0o")
+region = Rect2(768, 870, 384, 435)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5beeo"]
+atlas = ExtResource("6_0rp0o")
+region = Rect2(1152, 870, 384, 435)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6apxc"]
+atlas = ExtResource("6_0rp0o")
+region = Rect2(1536, 870, 384, 435)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8lkc"]
+atlas = ExtResource("6_0rp0o")
+region = Rect2(0, 1305, 384, 435)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q6ww4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kg5ns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_os0df")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_671vt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6sc76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ea4ui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5beeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6apxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8lkc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_3doud"]
+points = PackedVector2Array(20, 20, -13, 53, 53, 53)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_oy8jv"]
+points = PackedVector2Array(20, 20, 53, -13, 53, 53)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_dgkem"]
+points = PackedVector2Array(20, 20, 53, -13, -13, -13)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_6ws33"]
+points = PackedVector2Array(20, 20, -13, -13, -13, 53)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g2787"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nyv0j"]
+radius = 48.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_digys"]
+size = Vector2(100, 50)
+
+[sub_resource type="LabelSettings" id="LabelSettings_w0cku"]
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7rn0o"]
+radius = 44.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_tra33"]
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vtgqo"]
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h8d1f"]
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cbx4x"]
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2svr"]
+size = Vector2(80, 50)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2y2p3"]
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ktdt"]
+size = Vector2(100, 50)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qq14q"]
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pladm"]
+size = Vector2(72, 72)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1hibo"]
+font_size = 24
+font_color = Color(0.176471, 0.176471, 0.176471, 1)
+outline_size = 4
+outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2bm6"]
+size = Vector2(152, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqj3l"]
+size = Vector2(76, 76)
+
+[node name="hud" type="CanvasLayer"]
+script = ExtResource("1_afl1v")
+
+[node name="ActionBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Frame" type="CenterContainer" parent="ActionBar"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 286.0
+offset_top = 541.0
+offset_right = 466.0
+offset_bottom = 562.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3, 3)
+
+[node name="TextureRect" type="TextureRect" parent="ActionBar/Frame"]
+layout_mode = 2
+texture = ExtResource("1_p3smb")
+stretch_mode = 2
+
+[node name="Slot1" type="CenterContainer" parent="ActionBar"]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 297.0
+offset_top = 552.0
+offset_right = 313.0
+offset_bottom = 568.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotTexture" type="TextureRect" parent="ActionBar/Slot1"]
+layout_mode = 2
+
+[node name="SlotSelected" type="Sprite2D" parent="ActionBar/Slot1"]
+visible = false
+position = Vector2(7.99999, 7.59995)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_xvcdo")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ActionBar/Slot1"]
+position = Vector2(8, 7.6)
+shape = SubResource("RectangleShape2D_1o1vr")
+action = "Slot_1"
+
+[node name="Slot2" type="CenterContainer" parent="ActionBar"]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 357.0
+offset_top = 552.0
+offset_right = 373.0
+offset_bottom = 568.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotTexture" type="TextureRect" parent="ActionBar/Slot2"]
+layout_mode = 2
+
+[node name="SlotSelected" type="Sprite2D" parent="ActionBar/Slot2"]
+visible = false
+position = Vector2(7.59998, 7.99995)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_xvcdo")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ActionBar/Slot2"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_1o1vr")
+action = "Slot_2"
+
+[node name="Slot3" type="CenterContainer" parent="ActionBar"]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 417.0
+offset_top = 552.0
+offset_right = 433.0
+offset_bottom = 568.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotTexture" type="TextureRect" parent="ActionBar/Slot3"]
+layout_mode = 2
+
+[node name="SlotSelected" type="Sprite2D" parent="ActionBar/Slot3"]
+visible = false
+position = Vector2(7.59998, 7.99995)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_xvcdo")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ActionBar/Slot3"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_1o1vr")
+action = "Slot_3"
+
+[node name="Slot4" type="CenterContainer" parent="ActionBar"]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 476.0
+offset_top = 552.0
+offset_right = 492.0
+offset_bottom = 568.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotTexture" type="TextureRect" parent="ActionBar/Slot4"]
+layout_mode = 2
+
+[node name="SlotSelected" type="Sprite2D" parent="ActionBar/Slot4"]
+visible = false
+position = Vector2(7.59998, 7.99995)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_xvcdo")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ActionBar/Slot4"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_1o1vr")
+action = "Slot_4"
+
+[node name="Slot5" type="CenterContainer" parent="ActionBar"]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 536.0
+offset_top = 552.0
+offset_right = 552.0
+offset_bottom = 568.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotTexture" type="TextureRect" parent="ActionBar/Slot5"]
+layout_mode = 2
+
+[node name="SlotSelected" type="Sprite2D" parent="ActionBar/Slot5"]
+visible = false
+position = Vector2(7.59998, 7.99995)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_xvcdo")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ActionBar/Slot5"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_1o1vr")
+action = "Slot_5"
+
+[node name="Slot6" type="CenterContainer" parent="ActionBar"]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 596.0
+offset_top = 552.0
+offset_right = 612.0
+offset_bottom = 568.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotTexture" type="TextureRect" parent="ActionBar/Slot6"]
+layout_mode = 2
+
+[node name="SlotSelected" type="Sprite2D" parent="ActionBar/Slot6"]
+visible = false
+position = Vector2(7.59998, 7.99995)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_xvcdo")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ActionBar/Slot6"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_1o1vr")
+action = "Slot_6"
+
+[node name="Slot7" type="CenterContainer" parent="ActionBar"]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 657.0
+offset_top = 552.0
+offset_right = 673.0
+offset_bottom = 568.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotTexture" type="TextureRect" parent="ActionBar/Slot7"]
+layout_mode = 2
+
+[node name="SlotSelected" type="Sprite2D" parent="ActionBar/Slot7"]
+visible = false
+position = Vector2(7.59998, 7.99995)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_xvcdo")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ActionBar/Slot7"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_1o1vr")
+action = "Slot_7"
+
+[node name="Slot8" type="CenterContainer" parent="ActionBar"]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 716.0
+offset_top = 552.0
+offset_right = 732.0
+offset_bottom = 568.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotTexture" type="TextureRect" parent="ActionBar/Slot8"]
+layout_mode = 2
+
+[node name="SlotSelected" type="Sprite2D" parent="ActionBar/Slot8"]
+visible = false
+position = Vector2(7.59998, 7.99995)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_xvcdo")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ActionBar/Slot8"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_1o1vr")
+action = "Slot_8"
+
+[node name="Slot9" type="CenterContainer" parent="ActionBar"]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 776.0
+offset_top = 552.0
+offset_right = 792.0
+offset_bottom = 568.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotTexture" type="TextureRect" parent="ActionBar/Slot9"]
+layout_mode = 2
+
+[node name="SlotSelected" type="Sprite2D" parent="ActionBar/Slot9"]
+visible = false
+position = Vector2(7.59998, 7.99995)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_xvcdo")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ActionBar/Slot9"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_1o1vr")
+action = "Slot_9"
+
+[node name="Quantity1" type="Label" parent="ActionBar"]
+layout_mode = 2
+offset_left = 334.0
+offset_top = 610.0
+offset_right = 362.0
+offset_bottom = 644.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity2" type="Label" parent="ActionBar"]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 610.0
+offset_right = 422.0
+offset_bottom = 644.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity3" type="Label" parent="ActionBar"]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 610.0
+offset_right = 482.0
+offset_bottom = 644.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity4" type="Label" parent="ActionBar"]
+layout_mode = 0
+offset_left = 514.0
+offset_top = 610.0
+offset_right = 542.0
+offset_bottom = 644.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity5" type="Label" parent="ActionBar"]
+layout_mode = 0
+offset_left = 574.0
+offset_top = 610.0
+offset_right = 602.0
+offset_bottom = 644.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity6" type="Label" parent="ActionBar"]
+layout_mode = 0
+offset_left = 634.0
+offset_top = 610.0
+offset_right = 662.0
+offset_bottom = 644.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity7" type="Label" parent="ActionBar"]
+layout_mode = 0
+offset_left = 694.0
+offset_top = 610.0
+offset_right = 722.0
+offset_bottom = 644.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity8" type="Label" parent="ActionBar"]
+layout_mode = 0
+offset_left = 754.0
+offset_top = 610.0
+offset_right = 782.0
+offset_bottom = 644.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity9" type="Label" parent="ActionBar"]
+layout_mode = 0
+offset_left = 814.0
+offset_top = 610.0
+offset_right = 842.0
+offset_bottom = 644.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="CraftingTable" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 576.0
+offset_top = 324.0
+offset_right = 576.0
+offset_bottom = 324.0
+
+[node name="Frame" type="CenterContainer" parent="CraftingTable"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="CraftingTable/Frame"]
+texture = ExtResource("12_l5npx")
+
+[node name="Inventory" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame" type="CenterContainer" parent="Inventory"]
+layout_mode = 0
+offset_left = -244.0
+offset_top = -229.0
+offset_right = -68.0
+offset_bottom = -63.0
+scale = Vector2(3, 3)
+
+[node name="TextureRect" type="TextureRect" parent="Inventory/Frame"]
+layout_mode = 2
+texture = ExtResource("8_l6hej")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Inventory"]
+position = Vector2(-97, -102)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_q6ww4")
+autoplay = "default"
+
+[node name="SingleChest" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ChestOpen" type="AudioStreamPlayer2D" parent="SingleChest"]
+position = Vector2(576, 324)
+stream = ExtResource("7_syjx7")
+
+[node name="ChestClosed" type="AudioStreamPlayer2D" parent="SingleChest"]
+position = Vector2(576, 324)
+stream = ExtResource("8_3tuke")
+
+[node name="Frame" type="CenterContainer" parent="SingleChest"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 75.0
+offset_right = 488.0
+offset_bottom = 241.0
+scale = Vector2(3, 3)
+
+[node name="TextureRect" type="TextureRect" parent="SingleChest/Frame"]
+layout_mode = 2
+texture = ExtResource("9_du2qu")
+
+[node name="Slots" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slot1" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 333.0
+offset_top = 498.0
+offset_right = 354.0
+offset_bottom = 519.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot1"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot1"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot1"]
+visible = false
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot2" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 387.0
+offset_top = 498.0
+offset_right = 408.0
+offset_bottom = 519.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot2"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot2"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot2"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot3" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 441.0
+offset_top = 498.0
+offset_right = 462.0
+offset_bottom = 519.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot3"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot3"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot3"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot4" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 495.0
+offset_top = 498.0
+offset_right = 516.0
+offset_bottom = 519.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot4"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot4"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot4"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot5" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 549.0
+offset_top = 498.0
+offset_right = 570.0
+offset_bottom = 519.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot5"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot5"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot5"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot6" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 603.0
+offset_top = 498.0
+offset_right = 624.0
+offset_bottom = 519.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot6"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot6"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot6"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot7" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 657.0
+offset_top = 498.0
+offset_right = 678.0
+offset_bottom = 519.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot7"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot7"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot7"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot8" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 711.0
+offset_top = 498.0
+offset_right = 732.0
+offset_bottom = 519.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot8"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot8"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot8"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot9" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 765.0
+offset_top = 498.0
+offset_right = 786.0
+offset_bottom = 519.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot9"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot9"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot9"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot10" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 333.0
+offset_top = 324.0
+offset_right = 355.0
+offset_bottom = 346.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot10"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot10"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot10"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot11" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 387.0
+offset_top = 324.0
+offset_right = 408.0
+offset_bottom = 345.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot11"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot11"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot11"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot12" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 441.0
+offset_top = 324.0
+offset_right = 462.0
+offset_bottom = 345.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot12"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot12"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot12"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot13" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 495.0
+offset_top = 324.0
+offset_right = 516.0
+offset_bottom = 345.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot13"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot13"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot13"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot14" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 549.0
+offset_top = 324.0
+offset_right = 570.0
+offset_bottom = 345.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot14"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot14"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot14"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot15" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 603.0
+offset_top = 324.0
+offset_right = 624.0
+offset_bottom = 345.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot15"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot15"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot15"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot16" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 657.0
+offset_top = 324.0
+offset_right = 678.0
+offset_bottom = 345.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot16"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot16"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot16"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot17" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 710.0
+offset_top = 324.0
+offset_right = 731.0
+offset_bottom = 345.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot17"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot17"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot17"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot18" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 764.0
+offset_top = 324.0
+offset_right = 785.0
+offset_bottom = 345.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot18"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot18"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot18"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot19" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 333.0
+offset_top = 378.0
+offset_right = 354.0
+offset_bottom = 399.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot19"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot19"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot19"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot20" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 387.0
+offset_top = 378.0
+offset_right = 408.0
+offset_bottom = 399.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot20"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot20"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot20"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot21" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 441.0
+offset_top = 378.0
+offset_right = 462.0
+offset_bottom = 399.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot21"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot21"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot21"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot22" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 495.0
+offset_top = 378.0
+offset_right = 516.0
+offset_bottom = 399.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot22"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot22"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot22"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot23" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 549.0
+offset_top = 378.0
+offset_right = 570.0
+offset_bottom = 399.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot23"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot23"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot23"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot24" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 603.0
+offset_top = 378.0
+offset_right = 624.0
+offset_bottom = 399.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot24"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot24"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot24"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot25" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 657.0
+offset_top = 378.0
+offset_right = 678.0
+offset_bottom = 399.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot25"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot25"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot25"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot26" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 710.0
+offset_top = 378.0
+offset_right = 731.0
+offset_bottom = 399.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot26"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot26"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot26"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot27" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 765.0
+offset_top = 378.0
+offset_right = 786.0
+offset_bottom = 399.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot27"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot27"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot27"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot28" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 333.0
+offset_top = 432.0
+offset_right = 354.0
+offset_bottom = 453.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot28"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot28"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot28"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot29" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 387.0
+offset_top = 431.0
+offset_right = 408.0
+offset_bottom = 452.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot29"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot29"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot29"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot30" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 441.0
+offset_top = 431.0
+offset_right = 462.0
+offset_bottom = 452.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot30"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot30"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot30"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot31" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 495.0
+offset_top = 432.0
+offset_right = 516.0
+offset_bottom = 453.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot31"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot31"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot31"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot32" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 549.0
+offset_top = 432.0
+offset_right = 570.0
+offset_bottom = 453.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot32"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot32"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot32"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot33" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 603.0
+offset_top = 431.0
+offset_right = 624.0
+offset_bottom = 452.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot33"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot33"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot33"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot34" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 657.0
+offset_top = 432.0
+offset_right = 678.0
+offset_bottom = 453.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot34"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot34"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot34"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot35" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 710.0
+offset_top = 432.0
+offset_right = 731.0
+offset_bottom = 453.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot35"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot35"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot35"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Slot36" type="Control" parent="Slots"]
+anchors_preset = 0
+offset_left = 765.0
+offset_top = 431.0
+offset_right = 786.0
+offset_bottom = 452.0
+scale = Vector2(2.5, 2.5)
+
+[node name="SlotHighlighted" type="TextureRect" parent="Slots/Slot36"]
+visible = false
+layout_mode = 2
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("10_b5oe1")
+
+[node name="SlotTexture" type="TextureRect" parent="Slots/Slot36"]
+layout_mode = 2
+offset_left = 2.8
+offset_top = 2.8
+offset_right = 18.8
+offset_bottom = 18.8
+stretch_mode = 3
+
+[node name="SlotSelected" type="TextureRect" parent="Slots/Slot36"]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = ExtResource("3_xvcdo")
+
+[node name="Quantity1" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 524.0
+offset_right = 385.0
+offset_bottom = 558.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity2" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 524.0
+offset_right = 439.0
+offset_bottom = 558.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity3" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 524.0
+offset_right = 493.0
+offset_bottom = 558.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity4" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 524.0
+offset_right = 547.0
+offset_bottom = 558.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity5" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 573.0
+offset_top = 524.0
+offset_right = 601.0
+offset_bottom = 558.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity6" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 627.0
+offset_top = 524.0
+offset_right = 655.0
+offset_bottom = 558.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity7" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 681.0
+offset_top = 523.0
+offset_right = 709.0
+offset_bottom = 557.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity8" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 735.0
+offset_top = 524.0
+offset_right = 763.0
+offset_bottom = 558.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity9" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 524.0
+offset_right = 817.0
+offset_bottom = 558.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity10" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 350.0
+offset_right = 385.0
+offset_bottom = 384.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity11" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 350.0
+offset_right = 439.0
+offset_bottom = 384.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity12" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 350.0
+offset_right = 493.0
+offset_bottom = 384.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity13" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 350.0
+offset_right = 547.0
+offset_bottom = 384.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity14" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 573.0
+offset_top = 350.0
+offset_right = 601.0
+offset_bottom = 384.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity15" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 627.0
+offset_top = 350.0
+offset_right = 655.0
+offset_bottom = 384.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity16" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 681.0
+offset_top = 349.0
+offset_right = 709.0
+offset_bottom = 383.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity17" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 735.0
+offset_top = 350.0
+offset_right = 763.0
+offset_bottom = 384.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity18" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 350.0
+offset_right = 817.0
+offset_bottom = 384.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity19" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 404.0
+offset_right = 385.0
+offset_bottom = 438.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity20" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 404.0
+offset_right = 439.0
+offset_bottom = 438.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity21" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 404.0
+offset_right = 493.0
+offset_bottom = 438.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity22" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 404.0
+offset_right = 547.0
+offset_bottom = 438.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity23" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 573.0
+offset_top = 404.0
+offset_right = 601.0
+offset_bottom = 438.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity24" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 627.0
+offset_top = 404.0
+offset_right = 655.0
+offset_bottom = 438.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity25" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 681.0
+offset_top = 403.0
+offset_right = 709.0
+offset_bottom = 437.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity26" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 735.0
+offset_top = 404.0
+offset_right = 763.0
+offset_bottom = 438.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity27" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 404.0
+offset_right = 817.0
+offset_bottom = 438.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity28" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 458.0
+offset_right = 385.0
+offset_bottom = 492.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity29" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 458.0
+offset_right = 439.0
+offset_bottom = 492.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity30" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 458.0
+offset_right = 493.0
+offset_bottom = 492.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity31" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 458.0
+offset_right = 547.0
+offset_bottom = 492.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity32" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 573.0
+offset_top = 458.0
+offset_right = 601.0
+offset_bottom = 492.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity33" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 627.0
+offset_top = 458.0
+offset_right = 655.0
+offset_bottom = 492.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity34" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 681.0
+offset_top = 457.0
+offset_right = 709.0
+offset_bottom = 491.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity35" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 735.0
+offset_top = 458.0
+offset_right = 763.0
+offset_bottom = 492.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Quantity36" type="Label" parent="Slots"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 458.0
+offset_right = 817.0
+offset_bottom = 492.0
+label_settings = SubResource("LabelSettings_8efae")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="XPBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Frame" type="CenterContainer" parent="XPBar"]
+layout_mode = 0
+offset_left = 303.0
+offset_top = 557.0
+offset_right = 485.0
+offset_bottom = 562.0
+scale = Vector2(3, 3)
+
+[node name="TextureRect" type="TextureRect" parent="XPBar/Frame"]
+layout_mode = 2
+texture = ExtResource("10_ad4sl")
+
+[node name="Hearts" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -2.0
+offset_right = 40.0
+offset_bottom = 38.0
+
+[node name="Heart1" type="CenterContainer" parent="Hearts"]
+layout_mode = 0
+offset_left = 303.0
+offset_top = 530.0
+offset_right = 312.0
+offset_bottom = 539.0
+scale = Vector2(3, 3)
+
+[node name="HeartContainer" type="TextureRect" parent="Hearts/Heart1"]
+layout_mode = 2
+texture = ExtResource("11_013jg")
+
+[node name="Full" type="TextureRect" parent="Hearts/Heart1/HeartContainer"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 0.999997
+offset_right = 8.0
+offset_bottom = 8.0
+texture = ExtResource("12_r3bsj")
+
+[node name="Half" type="TextureRect" parent="Hearts/Heart1/HeartContainer"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 5.0
+offset_bottom = 8.0
+texture = ExtResource("14_r1sb7")
+stretch_mode = 3
+
+[node name="Heart2" type="CenterContainer" parent="Hearts"]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 530.0
+offset_right = 336.0
+offset_bottom = 539.0
+scale = Vector2(3, 3)
+
+[node name="HeartContainer" type="TextureRect" parent="Hearts/Heart2"]
+layout_mode = 2
+texture = ExtResource("11_013jg")
+
+[node name="Full" type="TextureRect" parent="Hearts/Heart2/HeartContainer"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 0.999997
+offset_right = 8.0
+offset_bottom = 8.0
+texture = ExtResource("12_r3bsj")
+
+[node name="Half" type="TextureRect" parent="Hearts/Heart2/HeartContainer"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 5.0
+offset_bottom = 8.0
+texture = ExtResource("14_r1sb7")
+stretch_mode = 3
+
+[node name="Heart3" type="CenterContainer" parent="Hearts"]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 530.0
+offset_right = 360.0
+offset_bottom = 539.0
+scale = Vector2(3, 3)
+
+[node name="HeartContainer" type="TextureRect" parent="Hearts/Heart3"]
+layout_mode = 2
+texture = ExtResource("11_013jg")
+
+[node name="Full" type="TextureRect" parent="Hearts/Heart3/HeartContainer"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 0.999997
+offset_right = 8.0
+offset_bottom = 8.0
+texture = ExtResource("12_r3bsj")
+
+[node name="Half" type="TextureRect" parent="Hearts/Heart3/HeartContainer"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 5.0
+offset_bottom = 8.0
+texture = ExtResource("14_r1sb7")
+stretch_mode = 3
+
+[node name="Heart4" type="CenterContainer" parent="Hearts"]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 530.0
+offset_right = 384.0
+offset_bottom = 539.0
+scale = Vector2(3, 3)
+
+[node name="HeartContainer" type="TextureRect" parent="Hearts/Heart4"]
+layout_mode = 2
+texture = ExtResource("11_013jg")
+
+[node name="Full" type="TextureRect" parent="Hearts/Heart4/HeartContainer"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 0.999997
+offset_right = 8.0
+offset_bottom = 8.0
+texture = ExtResource("12_r3bsj")
+
+[node name="Half" type="TextureRect" parent="Hearts/Heart4/HeartContainer"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 5.0
+offset_bottom = 8.0
+texture = ExtResource("14_r1sb7")
+stretch_mode = 3
+
+[node name="Heart5" type="CenterContainer" parent="Hearts"]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 530.0
+offset_right = 408.0
+offset_bottom = 539.0
+scale = Vector2(3, 3)
+
+[node name="HeartContainer" type="TextureRect" parent="Hearts/Heart5"]
+layout_mode = 2
+texture = ExtResource("11_013jg")
+
+[node name="Full" type="TextureRect" parent="Hearts/Heart5/HeartContainer"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 0.999997
+offset_right = 8.0
+offset_bottom = 8.0
+texture = ExtResource("12_r3bsj")
+
+[node name="Half" type="TextureRect" parent="Hearts/Heart5/HeartContainer"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 5.0
+offset_bottom = 8.0
+texture = ExtResource("14_r1sb7")
+stretch_mode = 3
+
+[node name="Heart6" type="CenterContainer" parent="Hearts"]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 530.0
+offset_right = 432.0
+offset_bottom = 539.0
+scale = Vector2(3, 3)
+
+[node name="HeartContainer" type="TextureRect" parent="Hearts/Heart6"]
+layout_mode = 2
+texture = ExtResource("11_013jg")
+
+[node name="Full" type="TextureRect" parent="Hearts/Heart6/HeartContainer"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 0.999997
+offset_right = 8.0
+offset_bottom = 8.0
+texture = ExtResource("12_r3bsj")
+
+[node name="Half" type="TextureRect" parent="Hearts/Heart6/HeartContainer"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 5.0
+offset_bottom = 8.0
+texture = ExtResource("14_r1sb7")
+stretch_mode = 3
+
+[node name="Heart7" type="CenterContainer" parent="Hearts"]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 530.0
+offset_right = 456.0
+offset_bottom = 539.0
+scale = Vector2(3, 3)
+
+[node name="HeartContainer" type="TextureRect" parent="Hearts/Heart7"]
+layout_mode = 2
+texture = ExtResource("11_013jg")
+
+[node name="Full" type="TextureRect" parent="Hearts/Heart7/HeartContainer"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 0.999997
+offset_right = 8.0
+offset_bottom = 8.0
+texture = ExtResource("12_r3bsj")
+
+[node name="Half" type="TextureRect" parent="Hearts/Heart7/HeartContainer"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 5.0
+offset_bottom = 8.0
+texture = ExtResource("14_r1sb7")
+stretch_mode = 3
+
+[node name="Heart8" type="CenterContainer" parent="Hearts"]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 530.0
+offset_right = 480.0
+offset_bottom = 539.0
+scale = Vector2(3, 3)
+
+[node name="HeartContainer" type="TextureRect" parent="Hearts/Heart8"]
+layout_mode = 2
+texture = ExtResource("11_013jg")
+
+[node name="Full" type="TextureRect" parent="Hearts/Heart8/HeartContainer"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 0.999997
+offset_right = 8.0
+offset_bottom = 8.0
+texture = ExtResource("12_r3bsj")
+
+[node name="Half" type="TextureRect" parent="Hearts/Heart8/HeartContainer"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 5.0
+offset_bottom = 8.0
+texture = ExtResource("14_r1sb7")
+stretch_mode = 3
+
+[node name="Heart9" type="CenterContainer" parent="Hearts"]
+layout_mode = 0
+offset_left = 495.0
+offset_top = 530.0
+offset_right = 504.0
+offset_bottom = 539.0
+scale = Vector2(3, 3)
+
+[node name="HeartContainer" type="TextureRect" parent="Hearts/Heart9"]
+layout_mode = 2
+texture = ExtResource("11_013jg")
+
+[node name="Full" type="TextureRect" parent="Hearts/Heart9/HeartContainer"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 0.999997
+offset_right = 8.0
+offset_bottom = 8.0
+texture = ExtResource("12_r3bsj")
+
+[node name="Half" type="TextureRect" parent="Hearts/Heart9/HeartContainer"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 5.0
+offset_bottom = 8.0
+texture = ExtResource("14_r1sb7")
+stretch_mode = 3
+
+[node name="Heart10" type="CenterContainer" parent="Hearts"]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 530.0
+offset_right = 528.0
+offset_bottom = 539.0
+scale = Vector2(3, 3)
+
+[node name="HeartContainer" type="TextureRect" parent="Hearts/Heart10"]
+layout_mode = 2
+texture = ExtResource("11_013jg")
+
+[node name="Full" type="TextureRect" parent="Hearts/Heart10/HeartContainer"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 0.999997
+offset_right = 8.0
+offset_bottom = 8.0
+texture = ExtResource("12_r3bsj")
+
+[node name="Half" type="TextureRect" parent="Hearts/Heart10/HeartContainer"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 5.0
+offset_bottom = 8.0
+texture = ExtResource("14_r1sb7")
+stretch_mode = 3
+
+[node name="Food" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -2.0
+offset_right = 40.0
+offset_bottom = 38.0
+
+[node name="Food1" type="CenterContainer" parent="Food"]
+layout_mode = 0
+offset_left = 822.0
+offset_top = 530.0
+offset_right = 831.0
+offset_bottom = 539.0
+scale = Vector2(3, 3)
+
+[node name="FoodContainer" type="TextureRect" parent="Food/Food1"]
+layout_mode = 2
+texture = ExtResource("13_t43r7")
+
+[node name="TextureRect" type="TextureRect" parent="Food/Food1/FoodContainer"]
+layout_mode = 0
+offset_right = 9.0
+offset_bottom = 9.0
+texture = ExtResource("14_uqryb")
+
+[node name="Food2" type="CenterContainer" parent="Food"]
+layout_mode = 0
+offset_left = 798.0
+offset_top = 530.0
+offset_right = 807.0
+offset_bottom = 539.0
+scale = Vector2(3, 3)
+
+[node name="FoodContainer" type="TextureRect" parent="Food/Food2"]
+layout_mode = 2
+texture = ExtResource("13_t43r7")
+
+[node name="TextureRect" type="TextureRect" parent="Food/Food2/FoodContainer"]
+layout_mode = 0
+offset_right = 9.0
+offset_bottom = 9.0
+texture = ExtResource("14_uqryb")
+
+[node name="Food3" type="CenterContainer" parent="Food"]
+layout_mode = 0
+offset_left = 774.0
+offset_top = 530.0
+offset_right = 783.0
+offset_bottom = 539.0
+scale = Vector2(3, 3)
+
+[node name="FoodContainer" type="TextureRect" parent="Food/Food3"]
+layout_mode = 2
+texture = ExtResource("13_t43r7")
+
+[node name="TextureRect" type="TextureRect" parent="Food/Food3/FoodContainer"]
+layout_mode = 0
+offset_right = 9.0
+offset_bottom = 9.0
+texture = ExtResource("14_uqryb")
+
+[node name="Food4" type="CenterContainer" parent="Food"]
+layout_mode = 0
+offset_left = 750.0
+offset_top = 530.0
+offset_right = 759.0
+offset_bottom = 539.0
+scale = Vector2(3, 3)
+
+[node name="FoodContainer" type="TextureRect" parent="Food/Food4"]
+layout_mode = 2
+texture = ExtResource("13_t43r7")
+
+[node name="TextureRect" type="TextureRect" parent="Food/Food4/FoodContainer"]
+layout_mode = 0
+offset_right = 9.0
+offset_bottom = 9.0
+texture = ExtResource("14_uqryb")
+
+[node name="Food5" type="CenterContainer" parent="Food"]
+layout_mode = 0
+offset_left = 726.0
+offset_top = 530.0
+offset_right = 735.0
+offset_bottom = 539.0
+scale = Vector2(3, 3)
+
+[node name="FoodContainer" type="TextureRect" parent="Food/Food5"]
+layout_mode = 2
+texture = ExtResource("13_t43r7")
+
+[node name="TextureRect" type="TextureRect" parent="Food/Food5/FoodContainer"]
+layout_mode = 0
+offset_right = 9.0
+offset_bottom = 9.0
+texture = ExtResource("14_uqryb")
+
+[node name="Food6" type="CenterContainer" parent="Food"]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 530.0
+offset_right = 711.0
+offset_bottom = 539.0
+scale = Vector2(3, 3)
+
+[node name="FoodContainer" type="TextureRect" parent="Food/Food6"]
+layout_mode = 2
+texture = ExtResource("13_t43r7")
+
+[node name="TextureRect" type="TextureRect" parent="Food/Food6/FoodContainer"]
+layout_mode = 0
+offset_right = 9.0
+offset_bottom = 9.0
+texture = ExtResource("14_uqryb")
+
+[node name="Food7" type="CenterContainer" parent="Food"]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 530.0
+offset_right = 687.0
+offset_bottom = 539.0
+scale = Vector2(3, 3)
+
+[node name="FoodContainer" type="TextureRect" parent="Food/Food7"]
+layout_mode = 2
+texture = ExtResource("13_t43r7")
+
+[node name="TextureRect" type="TextureRect" parent="Food/Food7/FoodContainer"]
+layout_mode = 0
+offset_right = 9.0
+offset_bottom = 9.0
+texture = ExtResource("14_uqryb")
+
+[node name="Food8" type="CenterContainer" parent="Food"]
+layout_mode = 0
+offset_left = 654.0
+offset_top = 530.0
+offset_right = 663.0
+offset_bottom = 539.0
+scale = Vector2(3, 3)
+
+[node name="FoodContainer" type="TextureRect" parent="Food/Food8"]
+layout_mode = 2
+texture = ExtResource("13_t43r7")
+
+[node name="TextureRect" type="TextureRect" parent="Food/Food8/FoodContainer"]
+layout_mode = 0
+offset_right = 9.0
+offset_bottom = 9.0
+texture = ExtResource("14_uqryb")
+
+[node name="Food9" type="CenterContainer" parent="Food"]
+layout_mode = 0
+offset_left = 630.0
+offset_top = 530.0
+offset_right = 639.0
+offset_bottom = 539.0
+scale = Vector2(3, 3)
+
+[node name="FoodContainer" type="TextureRect" parent="Food/Food9"]
+layout_mode = 2
+texture = ExtResource("13_t43r7")
+
+[node name="TextureRect" type="TextureRect" parent="Food/Food9/FoodContainer"]
+layout_mode = 0
+offset_right = 9.0
+offset_bottom = 9.0
+texture = ExtResource("14_uqryb")
+
+[node name="Food10" type="CenterContainer" parent="Food"]
+layout_mode = 0
+offset_left = 606.0
+offset_top = 530.0
+offset_right = 615.0
+offset_bottom = 539.0
+scale = Vector2(3, 3)
+
+[node name="FoodContainer" type="TextureRect" parent="Food/Food10"]
+layout_mode = 2
+texture = ExtResource("13_t43r7")
+
+[node name="TextureRect" type="TextureRect" parent="Food/Food10/FoodContainer"]
+layout_mode = 0
+offset_right = 9.0
+offset_bottom = 9.0
+texture = ExtResource("14_uqryb")
+
+[node name="DPad" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 51.0
+offset_top = 437.0
+offset_right = 91.0
+offset_bottom = 477.0
+scale = Vector2(4, 4)
+
+[node name="Base" type="TextureRect" parent="DPad"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("17_o5e4m")
+
+[node name="Down" type="TextureRect" parent="DPad"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("18_0mqnm")
+
+[node name="Left" type="TextureRect" parent="DPad"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("19_7pcp8")
+
+[node name="Right" type="TextureRect" parent="DPad"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("20_6c3t8")
+
+[node name="Up" type="TextureRect" parent="DPad"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("21_huagj")
+
+[node name="TouchScreenButtonDown" type="TouchScreenButton" parent="DPad"]
+shape = SubResource("ConvexPolygonShape2D_3doud")
+passby_press = true
+action = "ui_down"
+
+[node name="TouchScreenButtonRight" type="TouchScreenButton" parent="DPad"]
+shape = SubResource("ConvexPolygonShape2D_oy8jv")
+passby_press = true
+action = "ui_right"
+
+[node name="TouchScreenButtonUp" type="TouchScreenButton" parent="DPad"]
+shape = SubResource("ConvexPolygonShape2D_dgkem")
+passby_press = true
+action = "ui_up"
+
+[node name="TouchScreenButtonLeft" type="TouchScreenButton" parent="DPad"]
+shape = SubResource("ConvexPolygonShape2D_6ws33")
+passby_press = true
+action = "ui_left"
+
+[node name="NES" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ButtonB" type="Control" parent="NES"]
+anchors_preset = 0
+offset_left = 898.0
+offset_top = 476.0
+offset_right = 938.0
+offset_bottom = 516.0
+
+[node name="Unpressed" type="TextureRect" parent="NES/ButtonB"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("18_1st0s")
+
+[node name="Pressed" type="TextureRect" parent="NES/ButtonB"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("23_1k6qc")
+
+[node name="LabelUse" type="Label" parent="NES/ButtonB"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 28.0
+offset_right = 55.0
+offset_bottom = 51.0
+text = "Use"
+label_settings = SubResource("LabelSettings_g2787")
+
+[node name="LabelCancel" type="Label" parent="NES/ButtonB"]
+visible = false
+layout_mode = 0
+offset_left = 14.0
+offset_top = 28.0
+offset_right = 66.0
+offset_bottom = 51.0
+text = "Cancel"
+label_settings = SubResource("LabelSettings_g2787")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="NES/ButtonB"]
+position = Vector2(41, 40)
+shape = SubResource("CircleShape2D_nyv0j")
+action = "Use"
+
+[node name="ButtonA" type="Control" parent="NES"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1026.0
+offset_top = 476.0
+offset_right = 1066.0
+offset_bottom = 516.0
+
+[node name="Unpressed" type="TextureRect" parent="NES/ButtonA"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("18_1st0s")
+
+[node name="Pressed" type="TextureRect" parent="NES/ButtonA"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("23_1k6qc")
+
+[node name="LabelAttack" type="Label" parent="NES/ButtonA"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 28.0
+offset_right = 65.0
+offset_bottom = 51.0
+text = "Attack"
+label_settings = SubResource("LabelSettings_g2787")
+
+[node name="LabelSelect" type="Label" parent="NES/ButtonA"]
+visible = false
+layout_mode = 0
+offset_left = 17.0
+offset_top = 28.0
+offset_right = 63.0
+offset_bottom = 51.0
+text = "Select"
+label_settings = SubResource("LabelSettings_g2787")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="NES/ButtonA"]
+position = Vector2(40, 40)
+shape = SubResource("CircleShape2D_nyv0j")
+action = "Attack"
+
+[node name="ButtonSelect" type="Control" parent="NES"]
+anchors_preset = 0
+offset_left = 910.0
+offset_top = 602.0
+offset_right = 950.0
+offset_bottom = 642.0
+
+[node name="Unpressed" type="TextureRect" parent="NES/ButtonSelect"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 12.0
+scale = Vector2(2, 2)
+texture = ExtResource("29_j4ckb")
+
+[node name="Pressed" type="TextureRect" parent="NES/ButtonSelect"]
+visible = false
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 12.0
+scale = Vector2(2, 2)
+texture = ExtResource("25_cbtfe")
+
+[node name="Label" type="Label" parent="NES/ButtonSelect"]
+layout_mode = 0
+offset_left = 12.0
+offset_right = 48.0
+offset_bottom = 23.0
+text = "Item"
+label_settings = SubResource("LabelSettings_g2787")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="NES/ButtonSelect"]
+position = Vector2(30, 12)
+shape = SubResource("RectangleShape2D_digys")
+action = "Slot_Up"
+
+[node name="ButtonStart" type="Control" parent="NES"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1040.0
+offset_top = 602.0
+offset_right = 1080.0
+offset_bottom = 642.0
+
+[node name="Unpressed" type="TextureRect" parent="NES/ButtonStart"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 12.0
+scale = Vector2(2, 2)
+texture = ExtResource("29_j4ckb")
+
+[node name="Pressed" type="TextureRect" parent="NES/ButtonStart"]
+visible = false
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 12.0
+scale = Vector2(2, 2)
+texture = ExtResource("25_cbtfe")
+
+[node name="Label" type="Label" parent="NES/ButtonStart"]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 51.0
+offset_bottom = 23.0
+text = "Menu"
+label_settings = SubResource("LabelSettings_g2787")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="NES/ButtonStart"]
+position = Vector2(30, 12)
+shape = SubResource("RectangleShape2D_digys")
+action = "Inventory"
+
+[node name="SNES" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ButtonA" type="Control" parent="SNES"]
+anchors_preset = 0
+offset_left = 1026.0
+offset_top = 476.0
+offset_right = 1066.0
+offset_bottom = 516.0
+
+[node name="Unpressed" type="TextureRect" parent="SNES/ButtonA"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("18_1st0s")
+
+[node name="Pressed" type="TextureRect" parent="SNES/ButtonA"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("23_1k6qc")
+
+[node name="Label" type="Label" parent="SNES/ButtonA"]
+layout_mode = 0
+offset_left = 15.0001
+offset_top = 29.0001
+offset_right = 65.0001
+offset_bottom = 52.0001
+text = "Sneak"
+label_settings = SubResource("LabelSettings_w0cku")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="SNES/ButtonA"]
+position = Vector2(38.0001, 40.0001)
+shape = SubResource("CircleShape2D_7rn0o")
+action = "ui_select"
+
+[node name="ButtonB" type="Control" parent="SNES"]
+anchors_preset = 0
+offset_left = 963.0
+offset_top = 538.0
+offset_right = 1003.0
+offset_bottom = 578.0
+
+[node name="Unpressed" type="TextureRect" parent="SNES/ButtonB"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("23_he4qc")
+
+[node name="Pressed" type="TextureRect" parent="SNES/ButtonB"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("23_1k6qc")
+
+[node name="Label" type="Label" parent="SNES/ButtonB"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 29.0
+offset_right = 62.0
+offset_bottom = 52.0
+text = "Jump"
+label_settings = SubResource("LabelSettings_tra33")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="SNES/ButtonB"]
+position = Vector2(37, 38.9999)
+shape = SubResource("CircleShape2D_7rn0o")
+action = "ui_cancel"
+
+[node name="ButtonX" type="Control" parent="SNES"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 963.0
+offset_top = 414.0
+offset_right = 1003.0
+offset_bottom = 454.0
+
+[node name="Unpressed" type="TextureRect" parent="SNES/ButtonX"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("24_yem7f")
+
+[node name="Pressed" type="TextureRect" parent="SNES/ButtonX"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("23_1k6qc")
+
+[node name="Label" type="Label" parent="SNES/ButtonX"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 28.9999
+offset_right = 78.0
+offset_bottom = 51.9999
+text = "Inventory"
+label_settings = SubResource("LabelSettings_vtgqo")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="SNES/ButtonX"]
+position = Vector2(37, 40)
+shape = SubResource("CircleShape2D_7rn0o")
+action = "ui_accept"
+
+[node name="ButtonY" type="Control" parent="SNES"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 898.0
+offset_top = 476.0
+offset_right = 938.0
+offset_bottom = 516.0
+
+[node name="Unpressed" type="TextureRect" parent="SNES/ButtonY"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("25_7e06i")
+
+[node name="Pressed" type="TextureRect" parent="SNES/ButtonY"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("23_1k6qc")
+
+[node name="Label" type="Label" parent="SNES/ButtonY"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 29.0
+offset_right = 60.0
+offset_bottom = 52.0
+text = "Craft"
+label_settings = SubResource("LabelSettings_h8d1f")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="SNES/ButtonY"]
+position = Vector2(39, 40)
+shape = SubResource("CircleShape2D_7rn0o")
+
+[node name="ButtonL" type="Control" parent="SNES"]
+anchors_preset = 0
+offset_left = 865.0
+offset_top = 414.0
+offset_right = 905.0
+offset_bottom = 454.0
+
+[node name="TextureRect" type="TextureRect" parent="SNES/ButtonL"]
+layout_mode = 0
+offset_right = 25.0
+offset_bottom = 13.0
+scale = Vector2(3, 3)
+texture = ExtResource("27_0m8ok")
+
+[node name="Label" type="Label" parent="SNES/ButtonL"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 7.99997
+offset_right = 54.0
+offset_bottom = 31.0
+text = "Use"
+label_settings = SubResource("LabelSettings_cbx4x")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="SNES/ButtonL"]
+position = Vector2(37, 20)
+shape = SubResource("RectangleShape2D_i2svr")
+
+[node name="ButtonR" type="Control" parent="SNES"]
+anchors_preset = 0
+offset_left = 1066.0
+offset_top = 414.0
+offset_right = 1106.0
+offset_bottom = 454.0
+
+[node name="TextureRect" type="TextureRect" parent="SNES/ButtonR"]
+layout_mode = 0
+offset_right = 25.0
+offset_bottom = 13.0
+scale = Vector2(3, 3)
+texture = ExtResource("28_x6iea")
+
+[node name="Label" type="Label" parent="SNES/ButtonR"]
+layout_mode = 0
+offset_left = 8.99997
+offset_top = 8.0
+offset_right = 59.0
+offset_bottom = 31.0
+text = "Attack"
+label_settings = SubResource("LabelSettings_2y2p3")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="SNES/ButtonR"]
+position = Vector2(37, 20)
+shape = SubResource("RectangleShape2D_i2svr")
+
+[node name="ButtonSelect" type="Control" parent="SNES"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 851.0
+offset_top = 612.0
+offset_right = 891.0
+offset_bottom = 652.0
+rotation = -0.575959
+
+[node name="TextureRect" type="TextureRect" parent="SNES/ButtonSelect"]
+layout_mode = 0
+offset_right = 45.0
+offset_bottom = 18.0
+scale = Vector2(2, 2)
+texture = ExtResource("29_j4ckb")
+
+[node name="Label" type="Label" parent="SNES/ButtonSelect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 6.0
+offset_right = 73.0
+offset_bottom = 29.0
+text = "Players
+"
+label_settings = SubResource("LabelSettings_2y2p3")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="SNES/ButtonSelect"]
+position = Vector2(44, 17)
+shape = SubResource("RectangleShape2D_6ktdt")
+action = "Slot_Up"
+
+[node name="ButtonStart" type="Control" parent="SNES"]
+anchors_preset = 0
+offset_left = 1043.0
+offset_top = 612.0
+offset_right = 1083.0
+offset_bottom = 652.0
+rotation = -0.575959
+
+[node name="TextureRect" type="TextureRect" parent="SNES/ButtonStart"]
+layout_mode = 0
+offset_right = 45.0
+offset_bottom = 18.0
+scale = Vector2(2, 2)
+texture = ExtResource("29_j4ckb")
+
+[node name="Label" type="Label" parent="SNES/ButtonStart"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 6.0
+offset_right = 72.0
+offset_bottom = 29.0
+text = "Menu
+"
+label_settings = SubResource("LabelSettings_2y2p3")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="SNES/ButtonStart"]
+position = Vector2(46, 20)
+shape = SubResource("RectangleShape2D_6ktdt")
+action = "ui_accept"
+
+[node name="WASD" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 19.0
+offset_right = 60.0
+offset_bottom = 59.0
+
+[node name="W" type="Control" parent="WASD"]
+anchors_preset = 0
+offset_left = 91.0
+offset_top = 437.0
+offset_right = 131.0
+offset_bottom = 477.0
+
+[node name="TextureRect" type="TextureRect" parent="WASD/W"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("30_q8rxm")
+
+[node name="TextureRect2" type="TextureRect" parent="WASD/W"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("31_871yx")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="WASD/W"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 4.0
+offset_right = 26.0
+offset_bottom = 27.0
+text = "W"
+label_settings = SubResource("LabelSettings_qq14q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="WASD/W"]
+position = Vector2(40, 39)
+shape = SubResource("RectangleShape2D_pladm")
+passby_press = true
+action = "ui_up"
+
+[node name="A" type="Control" parent="WASD"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 11.0
+offset_top = 476.0
+offset_right = 51.0
+offset_bottom = 516.0
+
+[node name="TextureRect" type="TextureRect" parent="WASD/A"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("30_q8rxm")
+
+[node name="TextureRect2" type="TextureRect" parent="WASD/A"]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 40.0
+offset_bottom = 120.0
+rotation = -1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("31_871yx")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="WASD/A"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 4.0
+offset_right = 21.0
+offset_bottom = 27.0
+text = "A"
+label_settings = SubResource("LabelSettings_qq14q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="WASD/A"]
+position = Vector2(40, 39)
+shape = SubResource("RectangleShape2D_pladm")
+passby_press = true
+action = "ui_left"
+
+[node name="S" type="Control" parent="WASD"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 91.0
+offset_top = 517.0
+offset_right = 131.0
+offset_bottom = 557.0
+
+[node name="TextureRect" type="TextureRect" parent="WASD/S"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("30_q8rxm")
+
+[node name="TextureRect2" type="TextureRect" parent="WASD/S"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 80.0
+offset_right = 120.0
+offset_bottom = 120.0
+rotation = 3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("31_871yx")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="WASD/S"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 4.0
+offset_right = 18.0
+offset_bottom = 27.0
+text = "S"
+label_settings = SubResource("LabelSettings_qq14q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="WASD/S"]
+position = Vector2(40, 39)
+shape = SubResource("RectangleShape2D_pladm")
+passby_press = true
+action = "ui_down"
+
+[node name="D" type="Control" parent="WASD"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 171.0
+offset_top = 476.0
+offset_right = 211.0
+offset_bottom = 516.0
+
+[node name="TextureRect" type="TextureRect" parent="WASD/D"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("30_q8rxm")
+
+[node name="TextureRect2" type="TextureRect" parent="WASD/D"]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 120.0
+offset_bottom = 38.0
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("31_871yx")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="WASD/D"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 4.0
+offset_right = 21.0
+offset_bottom = 27.0
+text = "D"
+label_settings = SubResource("LabelSettings_qq14q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="WASD/D"]
+position = Vector2(40, 39)
+shape = SubResource("RectangleShape2D_pladm")
+passby_press = true
+action = "ui_right"
+
+[node name="Space" type="Control" parent="WASD"]
+anchors_preset = 0
+offset_left = 955.0
+offset_top = 521.0
+offset_right = 995.0
+offset_bottom = 561.0
+
+[node name="TextureRect" type="TextureRect" parent="WASD/Space"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_right = 76.0
+offset_bottom = 38.0
+scale = Vector2(2, 2)
+texture = ExtResource("31_xyeyu")
+
+[node name="Label" type="Label" parent="WASD/Space"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 3.0
+offset_right = 55.0
+offset_bottom = 26.0
+text = "Space"
+label_settings = SubResource("LabelSettings_qq14q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelAction" type="Label" parent="WASD/Space"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 148.0
+offset_bottom = 73.0
+text = "Attack"
+label_settings = SubResource("LabelSettings_1hibo")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="WASD/Space"]
+position = Vector2(76, 38)
+shape = SubResource("RectangleShape2D_c2bm6")
+action = "Attack"
+
+[node name="Shift" type="Control" parent="WASD"]
+anchors_preset = 0
+offset_left = 870.0
+offset_top = 521.0
+offset_right = 910.0
+offset_bottom = 561.0
+
+[node name="TextureRect" type="TextureRect" parent="WASD/Shift"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 38.0
+scale = Vector2(2, 2)
+texture = ExtResource("30_q8rxm")
+
+[node name="Label" type="Label" parent="WASD/Shift"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 3.0
+offset_right = 44.0
+offset_bottom = 26.0
+text = "Shift"
+label_settings = SubResource("LabelSettings_qq14q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelAction" type="Label" parent="WASD/Shift"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 70.0
+offset_bottom = 71.0
+text = "Use"
+label_settings = SubResource("LabelSettings_1hibo")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="WASD/Shift"]
+position = Vector2(38, 38)
+shape = SubResource("RectangleShape2D_dqj3l")
+action = "Use"
+
+[node name="Enter" type="Control" parent="WASD"]
+anchors_preset = 0
+offset_left = 870.0
+offset_top = 436.0
+offset_right = 910.0
+offset_bottom = 476.0
+
+[node name="TextureRect" type="TextureRect" parent="WASD/Enter"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_right = 76.0
+offset_bottom = 38.0
+scale = Vector2(2, 2)
+texture = ExtResource("31_xyeyu")
+
+[node name="Label" type="Label" parent="WASD/Enter"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 3.0
+offset_right = 50.0
+offset_bottom = 26.0
+text = "Enter"
+label_settings = SubResource("LabelSettings_qq14q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelAction" type="Label" parent="WASD/Enter"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 146.0
+offset_bottom = 71.0
+text = "Inventory"
+label_settings = SubResource("LabelSettings_1hibo")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="WASD/Enter"]
+position = Vector2(76, 38)
+shape = SubResource("RectangleShape2D_c2bm6")
+action = "Inventory"
+
+[node name="PgUp" type="Control" parent="WASD"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1031.0
+offset_top = 436.0
+offset_right = 1071.0
+offset_bottom = 476.0
+
+[node name="TextureRect" type="TextureRect" parent="WASD/PgUp"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 38.0
+scale = Vector2(2, 2)
+texture = ExtResource("30_q8rxm")
+
+[node name="Label" type="Label" parent="WASD/PgUp"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 3.0
+offset_right = 44.0
+offset_bottom = 26.0
+text = "PgUp"
+label_settings = SubResource("LabelSettings_qq14q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelAction" type="Label" parent="WASD/PgUp"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 70.0
+offset_bottom = 71.0
+text = "Item"
+label_settings = SubResource("LabelSettings_1hibo")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="WASD/PgUp"]
+position = Vector2(38, 38)
+shape = SubResource("RectangleShape2D_dqj3l")
+action = "Slot_Up"
+
+[node name="Clock" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1112.0
+offset_right = 1152.0
+offset_bottom = 40.0
+scale = Vector2(2.5, 2.5)
+
+[node name="TextureRect" type="TextureRect" parent="Clock"]
+layout_mode = 0
+offset_left = -24.0
+offset_top = 2.0
+offset_right = 16.0
+offset_bottom = 42.0
+texture = ExtResource("35_7ibda")
+
+[node name="Calm1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_rakr5")
+autoplay = true

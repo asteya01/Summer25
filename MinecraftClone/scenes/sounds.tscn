@@ -1,0 +1,96 @@
+[gd_scene load_steps=21 format=3 uid="uid://d0x6t7qnflxas"]
+
+[ext_resource type="AudioStream" uid="uid://bsj5pvjpjhb3o" path="res://sounds/chest/chestclosed.wav" id="1_8eiel"]
+[ext_resource type="AudioStream" uid="uid://bjkej00teylr8" path="res://sounds/chest/chestopen.wav" id="2_t0cuk"]
+[ext_resource type="AudioStream" uid="uid://nlm5nmva0f0h" path="res://sounds/player/strong1.wav" id="3_l7piu"]
+[ext_resource type="AudioStream" uid="uid://rm5004x0kcqe" path="res://sounds/zombie/death.wav" id="4_3pvew"]
+[ext_resource type="AudioStream" uid="uid://blpty2m25gn0u" path="res://sounds/player/strong2.wav" id="4_d87lw"]
+[ext_resource type="AudioStream" uid="uid://bs8uy78spmpbq" path="res://sounds/player/strong3.wav" id="5_osima"]
+[ext_resource type="AudioStream" uid="uid://bxi2323mm2n44" path="res://sounds/zombie/hurt1.wav" id="5_tfqsf"]
+[ext_resource type="AudioStream" uid="uid://buvh3uvsflch7" path="res://sounds/zombie/say1.wav" id="6_byi4u"]
+[ext_resource type="AudioStream" uid="uid://bb5cxir3fxjlm" path="res://sounds/player/strong4.wav" id="6_kl43n"]
+[ext_resource type="AudioStream" uid="uid://dllrdcvi3tyjq" path="res://sounds/player/strong5.wav" id="7_v7fq7"]
+[ext_resource type="AudioStream" uid="uid://ctejml7r3xxp7" path="res://sounds/player/strong6.wav" id="8_pkbvf"]
+[ext_resource type="AudioStream" uid="uid://3jdk7daw3b3f" path="res://sounds/player/dig/grass1.wav" id="9_8d71w"]
+[ext_resource type="AudioStream" uid="uid://duxryi7uwjw0w" path="res://sounds/player/dig/stone1.wav" id="10_2gxd2"]
+[ext_resource type="AudioStream" uid="uid://b6bmusyrvj2t0" path="res://sounds/player/dig/wood1.wav" id="11_2nudw"]
+[ext_resource type="AudioStream" uid="uid://dlohla1d0x07x" path="res://sounds/player/step/grass1.wav" id="12_fl1ej"]
+[ext_resource type="AudioStream" uid="uid://bnamgttqvolgd" path="res://sounds/player/step/stone1.wav" id="13_6aida"]
+[ext_resource type="AudioStream" uid="uid://b1kkve24dnbbe" path="res://sounds/player/step/wood1.wav" id="14_1w5ac"]
+[ext_resource type="AudioStream" uid="uid://df2628g6ytjri" path="res://sounds/zombie/step1.wav" id="18_t14in"]
+[ext_resource type="AudioStream" uid="uid://dl80tikxeoh0e" path="res://sounds/random/pop.wav" id="18_u502p"]
+[ext_resource type="AudioStream" uid="uid://bed1r7xp3f83q" path="res://sounds/random/hurt.wav" id="19_4gcqp"]
+
+[node name="Sounds" type="Node2D"]
+
+[node name="chest" type="Node" parent="."]
+
+[node name="chestclosed" type="AudioStreamPlayer2D" parent="chest"]
+stream = ExtResource("1_8eiel")
+
+[node name="chestopen" type="AudioStreamPlayer2D" parent="chest"]
+stream = ExtResource("2_t0cuk")
+
+[node name="player" type="Node" parent="."]
+
+[node name="strong1" type="AudioStreamPlayer2D" parent="player"]
+stream = ExtResource("3_l7piu")
+
+[node name="strong2" type="AudioStreamPlayer2D" parent="player"]
+stream = ExtResource("4_d87lw")
+
+[node name="strong3" type="AudioStreamPlayer2D" parent="player"]
+stream = ExtResource("5_osima")
+
+[node name="strong4" type="AudioStreamPlayer2D" parent="player"]
+stream = ExtResource("6_kl43n")
+
+[node name="strong5" type="AudioStreamPlayer2D" parent="player"]
+stream = ExtResource("7_v7fq7")
+
+[node name="strong6" type="AudioStreamPlayer2D" parent="player"]
+stream = ExtResource("8_pkbvf")
+
+[node name="dig" type="Node" parent="player"]
+
+[node name="grass1" type="AudioStreamPlayer2D" parent="player/dig"]
+stream = ExtResource("9_8d71w")
+
+[node name="stone1" type="AudioStreamPlayer2D" parent="player/dig"]
+stream = ExtResource("10_2gxd2")
+
+[node name="wood1" type="AudioStreamPlayer2D" parent="player/dig"]
+stream = ExtResource("11_2nudw")
+
+[node name="step" type="Node" parent="player"]
+
+[node name="grass1" type="AudioStreamPlayer2D" parent="player/step"]
+stream = ExtResource("12_fl1ej")
+
+[node name="stone1" type="AudioStreamPlayer2D" parent="player/step"]
+stream = ExtResource("13_6aida")
+
+[node name="wood1" type="AudioStreamPlayer2D" parent="player/step"]
+stream = ExtResource("14_1w5ac")
+
+[node name="zombie" type="Node" parent="."]
+
+[node name="death" type="AudioStreamPlayer2D" parent="zombie"]
+stream = ExtResource("4_3pvew")
+
+[node name="hurt1" type="AudioStreamPlayer2D" parent="zombie"]
+stream = ExtResource("5_tfqsf")
+
+[node name="say1" type="AudioStreamPlayer2D" parent="zombie"]
+stream = ExtResource("6_byi4u")
+
+[node name="step1" type="AudioStreamPlayer2D" parent="zombie"]
+stream = ExtResource("18_t14in")
+
+[node name="random" type="Node" parent="."]
+
+[node name="pop" type="AudioStreamPlayer2D" parent="random"]
+stream = ExtResource("18_u502p")
+
+[node name="hurt" type="AudioStreamPlayer2D" parent="random"]
+stream = ExtResource("19_4gcqp")
