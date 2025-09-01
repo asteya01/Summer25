@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://7t2lnypv7kax"]
+[gd_scene load_steps=13 format=4 uid="uid://7t2lnypv7kax"]
 
 [ext_resource type="Script" uid="uid://def7fhy7ylttd" path="res://Scenes/LevelBase/LevelBase.gd" id="1_3lxj6"]
 [ext_resource type="Texture2D" uid="uid://bb0nxwc0wg7q4" path="res://assets/tiles/Terrain (16x16).png" id="1_5ufo3"]
@@ -6,7 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dp623us4w4480" path="res://Scenes/ObjectMaker/ObjectMaker.tscn" id="5_lmtt4"]
 [ext_resource type="AudioStream" uid="uid://uxfamcj5lc8m" path="res://assets/sound/Flowing Rocks.ogg" id="6_ooqsx"]
 [ext_resource type="PackedScene" uid="uid://dtcjls5b8sb0r" path="res://Scenes/FloorSpikes/FloorSpikes.tscn" id="7_txgif"]
+[ext_resource type="PackedScene" uid="uid://by8vefsa7r1i3" path="res://Scenes/Enemies/Eagle/Eagle.tscn" id="8_hcoko"]
 [ext_resource type="PackedScene" uid="uid://b0ky3j05gwqeb" path="res://Scenes/Hud/Hud.tscn" id="8_o536s"]
+[ext_resource type="PackedScene" uid="uid://dpf2wn3gl1a83" path="res://Scenes/Enemies/Frog/Frog.tscn" id="9_k6lws"]
+[ext_resource type="PackedScene" uid="uid://ddh068nxt71um" path="res://Scenes/Enemies/Snail/Snail.tscn" id="10_y0wgt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bgw71"]
 resource_name = "Platforms"
@@ -236,3 +239,12 @@ parameters/looping = true
 
 [node name="FloorSpikes" parent="Spikes" instance=ExtResource("7_txgif")]
 position = Vector2(93, -13.5)
+
+[node name="Eagle" parent="." instance=ExtResource("8_hcoko")]
+position = Vector2(174, -260)
+
+[node name="Frog" parent="." instance=ExtResource("9_k6lws")]
+position = Vector2(384, -100)
+
+[node name="Snail" parent="." instance=ExtResource("10_y0wgt")]
+position = Vector2(227, -21)
