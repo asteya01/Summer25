@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=3 uid="uid://ccn8gija3vb0k"]
 
-[ext_resource type="Texture2D" uid="uid://qd44ok3usg8e" path="res://assets/explosion/enemy-deadth.png" id="1_qb8ow"]
+[ext_resource type="Texture2D" uid="uid://bmaihuxuvit14" path="res://assets/explosion/enemy-deadth.png" id="1_qb8ow"]
 [ext_resource type="Script" uid="uid://tusu6gq3gobo" path="res://Scenes/Explosion/Explosion.gd" id="2_me2ut"]
-[ext_resource type="AudioStream" uid="uid://hbugmoaaxshh" path="res://assets/sound/pickup3.ogg" id="3_0buog"]
-[ext_resource type="AudioStream" uid="uid://dp62va7rssq2l" path="res://assets/sound/pickup5.ogg" id="4_k1cr7"]
+[ext_resource type="AudioStream" uid="uid://dp41pvu6k70jg" path="res://assets/sound/pickup3.ogg" id="3_0buog"]
+[ext_resource type="AudioStream" uid="uid://oijbgwb0bncx" path="res://assets/sound/pickup5.ogg" id="4_k1cr7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qb8ow"]
 atlas = ExtResource("1_qb8ow")

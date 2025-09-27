@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://be3plw547371f" path="res://Scenes/Enemies/EnemyBase.tscn" id="1_h5qp1"]
 [ext_resource type="Script" uid="uid://bleh01l08yc1i" path="res://Scenes/Enemies/Snail/Snail.gd" id="2_8m2hh"]
-[ext_resource type="Texture2D" uid="uid://boj8ao1u6xile" path="res://assets/enemies/snail/snail.png" id="2_tgnkg"]
+[ext_resource type="Texture2D" uid="uid://edkhbj5o2gbx" path="res://assets/enemies/snail/snail.png" id="2_tgnkg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tgnkg"]
 radius = 9.0

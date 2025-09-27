@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dtcjls5b8sb0r"]
 
-[ext_resource type="Texture2D" uid="uid://c55ryu50m4j2e" path="res://assets/danger/floor_spikes.png" id="1_50tkn"]
+[ext_resource type="Texture2D" uid="uid://cf44cayh0rd30" path="res://assets/danger/floor_spikes.png" id="1_50tkn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvqqu"]
 size = Vector2(16, 8.5)

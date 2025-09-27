@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://cogyfjg18xd0x"]
 
 [ext_resource type="Script" uid="uid://b7e5d2myxye2d" path="res://Scenes/Main/Main.gd" id="1_o8wgc"]
-[ext_resource type="Texture2D" uid="uid://d4bpk52av58vk" path="res://assets/backgrounds/game_background_3/game_background_3. 2.png" id="1_p8rbg"]
-[ext_resource type="FontFile" uid="uid://cmxrea7wqhnwg" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="2_qtv3y"]
-[ext_resource type="AudioStream" uid="uid://dglhvptgkgxg1" path="res://assets/sound/Farm Frolics.ogg" id="3_cmk6n"]
+[ext_resource type="Texture2D" uid="uid://dvfjpsaukyxdp" path="res://assets/backgrounds/game_background_3/game_background_3. 2.png" id="1_p8rbg"]
+[ext_resource type="FontFile" uid="uid://iciskndr7lm0" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="2_qtv3y"]
+[ext_resource type="AudioStream" uid="uid://c1ji6abiqmnli" path="res://assets/sound/Farm Frolics.ogg" id="3_cmk6n"]
 [ext_resource type="PackedScene" uid="uid://dtha14qxvijhj" path="res://Scenes/HighscoreDisplay/HighscoreDisplay.tscn" id="4_i3fi7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cmk6n"]
@@ -51,12 +51,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -272.5
+offset_top = -96.5
+offset_right = 272.5
+offset_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+rotation = 0.126041
 text = "FOXY ANTICS"
 label_settings = SubResource("LabelSettings_cmk6n")
 horizontal_alignment = 1

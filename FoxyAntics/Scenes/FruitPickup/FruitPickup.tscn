@@ -1,12 +1,12 @@
 [gd_scene load_steps=78 format=3 uid="uid://c2ylfj8lakax3"]
 
 [ext_resource type="Script" uid="uid://clrso6mmviir" path="res://Scenes/FruitPickup/FruitPickup.gd" id="1_4grnx"]
-[ext_resource type="Texture2D" uid="uid://dpm8cpofh3sne" path="res://assets/items/Bananas.png" id="1_b10hw"]
-[ext_resource type="Texture2D" uid="uid://du3fc1tb227y6" path="res://assets/items/Cherries.png" id="2_lurwm"]
-[ext_resource type="Texture2D" uid="uid://b02eyt6sqqypq" path="res://assets/items/Kiwi.png" id="3_n2p7j"]
-[ext_resource type="Texture2D" uid="uid://bv8dn01ciohwo" path="res://assets/items/Melon.png" id="4_4grnx"]
+[ext_resource type="Texture2D" uid="uid://cypuvk4wcpwfh" path="res://assets/items/Bananas.png" id="1_b10hw"]
+[ext_resource type="Texture2D" uid="uid://df6ktq48xvr8w" path="res://assets/items/Cherries.png" id="2_lurwm"]
+[ext_resource type="Texture2D" uid="uid://c3l8jbuubk27v" path="res://assets/items/Kiwi.png" id="3_n2p7j"]
+[ext_resource type="Texture2D" uid="uid://1fnulm4tm1wt" path="res://assets/items/Melon.png" id="4_4grnx"]
 [ext_resource type="PackedScene" uid="uid://dl8bb57uhoxsj" path="res://Scenes/LifeTimer/LifeTimer.tscn" id="6_88e5w"]
-[ext_resource type="AudioStream" uid="uid://crp1i03rx4c80" path="res://assets/sound/pickup.wav" id="7_88e5w"]
+[ext_resource type="AudioStream" uid="uid://dstmpjruddwra" path="res://assets/sound/pickup.wav" id="7_88e5w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0vva4"]
 atlas = ExtResource("1_b10hw")

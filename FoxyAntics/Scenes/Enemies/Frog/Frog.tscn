@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://be3plw547371f" path="res://Scenes/Enemies/EnemyBase.tscn" id="1_wocr3"]
 [ext_resource type="Script" uid="uid://btcp18dpydgvd" path="res://Scenes/Enemies/Frog/Frog.gd" id="2_iwcnn"]
-[ext_resource type="Texture2D" uid="uid://xllhbaatd22v" path="res://assets/enemies/frog/frog_sheet.png" id="2_qthob"]
+[ext_resource type="Texture2D" uid="uid://buns0dhjj7t1y" path="res://assets/enemies/frog/frog_sheet.png" id="2_qthob"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qthob"]
 radius = 8.0

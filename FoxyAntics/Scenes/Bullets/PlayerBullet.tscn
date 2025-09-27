@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://k4eqef1n7cn5"]
 
 [ext_resource type="PackedScene" uid="uid://bducfc85u04q8" path="res://Scenes/Bullets/BaseBullet.tscn" id="1_067qp"]
-[ext_resource type="Texture2D" uid="uid://dlo7xq0gm82mp" path="res://assets/items/bullet1.png" id="2_p0tgw"]
+[ext_resource type="Texture2D" uid="uid://bh4kl083iaa0v" path="res://assets/items/bullet1.png" id="2_p0tgw"]
 [ext_resource type="Shape2D" uid="uid://hkaij8bqeglx" path="res://Resources/BulletShape.tres" id="3_ptknu"]
 
 [node name="PlayerBullet" instance=ExtResource("1_067qp")]

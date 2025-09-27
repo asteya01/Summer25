@@ -2,7 +2,7 @@
 
 [ext_resource type="LabelSettings" uid="uid://dea2jlx2jyccd" path="res://Resources/ScoreDisplay.tres" id="1_vvs1i"]
 [ext_resource type="Script" uid="uid://cq1ee3rbhnv4w" path="res://Scenes/Hud/Hud.gd" id="1_xymhr"]
-[ext_resource type="Texture2D" uid="uid://ccon2wdi057kq" path="res://assets/items/pixel heart 2.png" id="2_iteex"]
+[ext_resource type="Texture2D" uid="uid://dldyaj1f5pw5u" path="res://assets/items/pixel heart 2.png" id="2_iteex"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3

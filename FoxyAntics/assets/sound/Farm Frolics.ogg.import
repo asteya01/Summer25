@@ -2,7 +2,7 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
-uid="uid://dglhvptgkgxg1"
+uid="uid://c1ji6abiqmnli"
 path="res://.godot/imported/Farm Frolics.ogg-dc0510a06d892f1a225dd451abe34523.oggvorbisstr"
 
 [deps]
@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Farm Frolics.ogg-dc0510a06d892f1a225dd451abe3
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0

@@ -30,7 +30,6 @@ func fly_to_player() -> void:
 	flip_me()
 	var x_dir: float = 1.0 if animated_sprite_2d.flip_h else -1.0
 	_fly_direction = Vector2(x_dir, 1) * fly_speed
-	print("_fly_direction:", _fly_direction)
 
 
 func _on_visible_on_screen_notifier_2d_screen_entered() -> void:

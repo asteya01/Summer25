@@ -1,10 +1,10 @@
 [gd_scene load_steps=35 format=3 uid="uid://be1gk8hiqhyho"]
 
 [ext_resource type="Script" uid="uid://bqr6bmvlg7hda" path="res://Scenes/Player/Player.gd" id="1_ft8w5"]
-[ext_resource type="Texture2D" uid="uid://cgaufkkq0l4p1" path="res://assets/player/player.png" id="1_s0eop"]
+[ext_resource type="Texture2D" uid="uid://uytwdji3pa3b" path="res://assets/player/player.png" id="1_s0eop"]
 [ext_resource type="PackedScene" uid="uid://boiqha8vg5p7o" path="res://Scenes/PlayerCam/PlayerCam.tscn" id="3_h54ih"]
 [ext_resource type="PackedScene" uid="uid://bxs3sovt53hl6" path="res://Scenes/Shooter/Shooter.tscn" id="4_ude3g"]
-[ext_resource type="AudioStream" uid="uid://lbq55i1ovyrk" path="res://assets/sound/jump.wav" id="5_jmcll"]
+[ext_resource type="AudioStream" uid="uid://bbhl8e2r042h3" path="res://assets/sound/jump.wav" id="5_jmcll"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s0eop"]
 radius = 5.0
