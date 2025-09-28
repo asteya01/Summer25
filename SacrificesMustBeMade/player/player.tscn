@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyfi5fhlei1if"]
+
+[ext_resource type="PackedScene" uid="uid://chjrhhjvxun3r" path="res://player/simple_gun/gun_model.glb" id="1_oul6g"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
+height = 2.3514352
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sh265"]
+size = Vector3(0.1, 0.1, 1)
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.9947405, -0.08091277, 0.06280308, 0.0792855, 0.9964588, 0.027987644, -0.06484534, -0.022861183, 0.99763334, 0.08654121, 0.4097023, 0.15841259)
+shape = SubResource("CapsuleShape3D_sh265")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="gun_model" parent="Camera3D" instance=ExtResource("1_oul6g")]
+transform = Transform3D(-0.47961342, 0, 0.032419167, 0, 0.38400003, 0, -0.030586591, 0, -0.5083492, 0.60827947, 0, -0.9788987)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9947405, -0.08091277, 0.06280308, 0.0792855, 0.9964588, 0.027987644, -0.06484534, -0.022861183, 0.99763334, 1.0865412, 1.4097023, 0.15841259)
+visible = false
+mesh = SubResource("CapsuleMesh_sh265")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1)
+visible = false
+mesh = SubResource("BoxMesh_sh265")
