@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Sacrifices Must Be Made"
+run/main_scene="uid://dp7sxe5xl5shk"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
+
+[debug]
+
+shader_language/debugger/max_errors_per_second=1
 
 [rendering]
 
