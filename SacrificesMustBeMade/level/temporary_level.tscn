@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dp7sxe5xl5shk"]
+[gd_scene load_steps=8 format=3 uid="uid://dp7sxe5xl5shk"]
 
 [ext_resource type="Texture2D" uid="uid://bos7rridjkps1" path="res://level/checkboard.png" id="1_cig4d"]
 [ext_resource type="PackedScene" uid="uid://cyfi5fhlei1if" path="res://player/player.tscn" id="2_bc4qa"]
+[ext_resource type="Texture2D" uid="uid://cuyh8hew637ju" path="res://player/reticle.png" id="3_gmctb"]
 
 [sub_resource type="Environment" id="Environment_pev5d"]
 background_mode = 1
@@ -84,3 +85,18 @@ material = SubResource("StandardMaterial3D_7l0sc")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_bc4qa")]
 transform = Transform3D(-0.9994726, 0, 0.0324748, 0, 1, 0, -0.0324748, 0, -0.9994726, 1.0287232, 2.424806, 1.1444459)
+
+[node name="Reticle" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -27.0
+offset_right = 27.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_gmctb")
+expand_mode = 1
