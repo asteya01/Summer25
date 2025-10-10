@@ -239,6 +239,20 @@ tree_root = SubResource("AnimationNodeStateMachine_t26db")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
 
+[node name="DebugLabel" type="Label" parent="."]
+offset_left = -16.0
+offset_top = -60.0
+offset_right = 258.0
+offset_bottom = 342.0
+scale = Vector2(0.11845791, 0.11845791)
+theme_override_font_sizes/font_size = 96
+text = "0000
+00000
+00000"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 24
