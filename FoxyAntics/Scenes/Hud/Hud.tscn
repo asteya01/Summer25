@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dldyaj1f5pw5u" path="res://assets/items/pixel heart 2.png" id="2_iteex"]
 
 [node name="Hud" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,6 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_xymhr")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -23,38 +25,40 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 
 [node name="ScoreLabel" type="Label" parent="MarginContainer"]
+process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "000"
 label_settings = ExtResource("1_vvs1i")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBHearts" type="HBoxContainer" parent="MarginContainer"]
+process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 
-[node name="H1" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="H1" type="TextureRect" parent="MarginContainer/HBHearts"]
 layout_mode = 2
 texture = ExtResource("2_iteex")
 stretch_mode = 4
 
-[node name="H2" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="H2" type="TextureRect" parent="MarginContainer/HBHearts"]
 layout_mode = 2
 texture = ExtResource("2_iteex")
 stretch_mode = 4
 
-[node name="H3" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="H3" type="TextureRect" parent="MarginContainer/HBHearts"]
 layout_mode = 2
 texture = ExtResource("2_iteex")
 stretch_mode = 4
 
-[node name="H4" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="H4" type="TextureRect" parent="MarginContainer/HBHearts"]
 layout_mode = 2
 texture = ExtResource("2_iteex")
 stretch_mode = 4
 
-[node name="H5" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="H5" type="TextureRect" parent="MarginContainer/HBHearts"]
 layout_mode = 2
 texture = ExtResource("2_iteex")
 stretch_mode = 4

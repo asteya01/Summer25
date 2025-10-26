@@ -2,6 +2,7 @@ extends Node
 
 
 signal on_boss_killed  
+signal on_player_hit(lives: int, shake: bool)
 
 
 signal on_create_bullet(
@@ -14,6 +15,10 @@ signal on_create_object(
 )
 
 signal on_scored(points: int)
+
+
+func emit_on_player_hit(lives: int, shake: bool) -> void:
+	on_player_hit.emit(lives, shake)
 
 
 func emit_on_boss_killed() -> void:
