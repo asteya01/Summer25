@@ -1,8 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0ky3j05gwqeb"]
+[gd_scene load_steps=7 format=3 uid="uid://b0ky3j05gwqeb"]
 
 [ext_resource type="LabelSettings" uid="uid://dea2jlx2jyccd" path="res://Resources/ScoreDisplay.tres" id="1_vvs1i"]
 [ext_resource type="Script" uid="uid://cq1ee3rbhnv4w" path="res://Scenes/Hud/Hud.gd" id="1_xymhr"]
 [ext_resource type="Texture2D" uid="uid://dldyaj1f5pw5u" path="res://assets/items/pixel heart 2.png" id="2_iteex"]
+[ext_resource type="LabelSettings" uid="uid://ku5gpe2lpxg2" path="res://Resources/GameOverDisplay.tres" id="4_bbjj2"]
+[ext_resource type="FontFile" uid="uid://iciskndr7lm0" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="5_ysf55"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ighhf"]
+font = ExtResource("5_ysf55")
+font_size = 56
+font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+outline_size = 5
+shadow_size = 9
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(4, 1)
 
 [node name="Hud" type="Control"]
 process_mode = 3
@@ -62,3 +73,81 @@ stretch_mode = 4
 layout_mode = 2
 texture = ExtResource("2_iteex")
 stretch_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.003921569, 0.09803922, 0.8666667)
+
+[node name="VBGameOver" type="VBoxContainer" parent="ColorRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.0
+offset_top = -48.5
+offset_right = 255.0
+offset_bottom = 48.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBGameOver"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Game Over"
+label_settings = ExtResource("4_bbjj2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBGameOver"]
+layout_mode = 2
+text = "PRESS SPACE"
+label_settings = SubResource("LabelSettings_ighhf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBComplete" type="VBoxContainer" parent="ColorRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.0
+offset_top = -48.5
+offset_right = 255.0
+offset_bottom = 48.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBComplete"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Level Complete"
+label_settings = ExtResource("4_bbjj2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBComplete"]
+layout_mode = 2
+text = "PRESS SPACE"
+label_settings = SubResource("LabelSettings_ighhf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CompleteTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+
+[connection signal="timeout" from="CompleteTimer" to="." method="_on_complete_timer_timeout"]

@@ -5,7 +5,6 @@ extends Node2D
 @export var points: int = 5
 
 
-
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var hit_box: Area2D = $Visuals/HitBox
 @onready var shooter: Shooter = $Visuals/Shooter
@@ -14,22 +13,16 @@ extends Node2D
 @onready var visuals: Node2D = $Visuals
 
 
-var _player_ref: Player
 var _invincible: bool = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_player_ref = get_tree().get_first_node_in_group(Constants.PLAYER_GROUP)
-	if _player_ref == null:
-		queue_free()
-		
-		
+	pass
+
+
 func shoot() -> void:
-	shooter.shoot(
-		shooter.global_position.direction_to(
-			_player_ref.global_position
-		)
-	)
+	shooter.shoot_at_player()
 
 
 func activate_collisions() -> void:
