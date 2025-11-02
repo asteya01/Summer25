@@ -17,13 +17,11 @@ func _physics_process(delta: float) -> void:
 	velocity = _fly_direction
 	move_and_slide()
 	shoot()
-
-
-func shoot() -> void:
-	if player_detector.is_colliding() == true:
-		var dir:Vector2 = \
-			global_position.direction_to(_player_ref.global_position)
-		shooter.shoot(dir)
+	
+	
+func shoot()-> void:
+	if player_detector.is_colliding() == true:		
+		shooter.shoot_at_player()
 		
 		
 func fly_to_player() -> void:
@@ -36,6 +34,7 @@ func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
 	animated_sprite_2d.play("fly")
 	direction_timer.start()
 	fly_to_player()
+	
 
 func _on_direction_timer_timeout() -> void:
 	fly_to_player()

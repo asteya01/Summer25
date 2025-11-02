@@ -14,13 +14,12 @@ func _init():
 	sort_scores()
 
 
-#func compare_scores(a, b):
-	#return a.score > b.score
+func compare_scores(a, b):
+	return a.score > b.score
 
 
 func sort_scores():
-	high_scores.sort_custom(func(a, b): return a.score > b.score)
-	#high_scores.sort_custom(compare_scores)
+	high_scores.sort_custom(compare_scores)
 
 
 func get_scores_list():

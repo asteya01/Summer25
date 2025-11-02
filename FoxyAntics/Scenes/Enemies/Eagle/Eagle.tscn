@@ -1,31 +1,34 @@
-[gd_scene load_steps=12 format=3 uid="uid://by8vefsa7r1i3"]
+[gd_scene load_steps=12 format=3 uid="uid://qj6miusubjoi"]
 
-[ext_resource type="PackedScene" uid="uid://be3plw547371f" path="res://Scenes/Enemies/EnemyBase.tscn" id="1_euo1a"]
-[ext_resource type="Texture2D" uid="uid://bowhxkgemtkur" path="res://assets/enemies/eagle/eagle-attack.png" id="2_8eptn"]
-[ext_resource type="Script" uid="uid://ctal1jrepl81v" path="res://Scenes/Enemies/Eagle/Eagle.gd" id="2_luig0"]
-[ext_resource type="PackedScene" uid="uid://bxs3sovt53hl6" path="res://Scenes/Shooter/Shooter.tscn" id="4_f4258"]
+[ext_resource type="PackedScene" uid="uid://dvat72p4v1ubg" path="res://Scenes/Enemies/EnemyBase.tscn" id="1_euo1a"]
+[ext_resource type="Texture2D" uid="uid://cieo5p1c6ugk4" path="res://assets/enemies/eagle/eagle-attack.png" id="2_8eptn"]
+[ext_resource type="Script" uid="uid://4s2o2ssqjyy4" path="res://Scenes/Enemies/Eagle/Eagle.gd" id="2_luig0"]
+[ext_resource type="PackedScene" uid="uid://byu3irng80rwm" path="res://Scenes/Shooter/Shooter.tscn" id="4_f4258"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_euo1a"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_luig0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8eptn"]
 atlas = ExtResource("2_8eptn")
 region = Rect2(0, 0, 40, 41)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f4258"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_luig0"]
 atlas = ExtResource("2_8eptn")
 region = Rect2(40, 0, 40, 41)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qhy2t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4258"]
 atlas = ExtResource("2_8eptn")
 region = Rect2(80, 0, 40, 41)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_foiie"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhy2t"]
 atlas = ExtResource("2_8eptn")
 region = Rect2(120, 0, 40, 41)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gs16j"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_foiie"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8eptn")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_luig0")
 }, {
@@ -34,9 +37,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qhy2t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_foiie")
 }],
 "loop": true,
 "name": &"fly",
@@ -44,7 +44,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8eptn"]
-radius = 11.0
+radius = 14.0357
 
 [node name="Eagle" instance=ExtResource("1_euo1a")]
 collision_mask = 0
@@ -56,13 +56,13 @@ shape = SubResource("CircleShape2D_euo1a")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 scale = Vector2(0.75, 0.75)
-sprite_frames = SubResource("SpriteFrames_gs16j")
+sprite_frames = SubResource("SpriteFrames_foiie")
 animation = &"fly"
 frame = 2
-frame_progress = 0.718777
+frame_progress = 0.102128
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
-position = Vector2(-3, 4)
+position = Vector2(-1, 1)
 shape = SubResource("CircleShape2D_8eptn")
 
 [node name="PlayerDetector" type="RayCast2D" parent="." index="4"]
@@ -75,7 +75,8 @@ collide_with_bodies = false
 wait_time = 3.0
 
 [node name="Shooter" parent="." index="6" instance=ExtResource("4_f4258")]
-speed = 160.0
+speed = 200.0
+shoot_delay = 0.5
 bullet_key = 3
 
 [connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]

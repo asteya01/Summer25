@@ -1,12 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://dpf2wn3gl1a83"]
+[gd_scene load_steps=14 format=3 uid="uid://cin0f5gus00c4"]
 
-[ext_resource type="PackedScene" uid="uid://be3plw547371f" path="res://Scenes/Enemies/EnemyBase.tscn" id="1_wocr3"]
-[ext_resource type="Script" uid="uid://btcp18dpydgvd" path="res://Scenes/Enemies/Frog/Frog.gd" id="2_iwcnn"]
-[ext_resource type="Texture2D" uid="uid://buns0dhjj7t1y" path="res://assets/enemies/frog/frog_sheet.png" id="2_qthob"]
+[ext_resource type="PackedScene" uid="uid://dvat72p4v1ubg" path="res://Scenes/Enemies/EnemyBase.tscn" id="1_wocr3"]
+[ext_resource type="Script" uid="uid://48oycywgdemn" path="res://Scenes/Enemies/Frog/Frog.gd" id="2_iwcnn"]
+[ext_resource type="Texture2D" uid="uid://c2ahjwhgasyjm" path="res://assets/enemies/frog/frog_sheet.png" id="2_qthob"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qthob"]
-radius = 8.0
-height = 20.0
+radius = 7.0
+height = 14.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iwcnn"]
 atlas = ExtResource("2_qthob")
@@ -36,7 +36,7 @@ region = Rect2(175, 0, 35, 32)
 atlas = ExtResource("2_qthob")
 region = Rect2(210, 0, 35, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_wocr3"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_e62du"]
 animations = [{
 "frames": [{
 "duration": 7.0,
@@ -71,7 +71,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qthob"]
-size = Vector2(20, 15.5)
+size = Vector2(20, 16)
 
 [node name="Frog" instance=ExtResource("1_wocr3")]
 script = ExtResource("2_iwcnn")
@@ -82,12 +82,11 @@ shape = SubResource("CapsuleShape2D_qthob")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 scale = Vector2(0.75, 0.75)
-sprite_frames = SubResource("SpriteFrames_wocr3")
+sprite_frames = SubResource("SpriteFrames_e62du")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
-position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_qthob")
 
 [node name="JumpTimer" type="Timer" parent="." index="4"]

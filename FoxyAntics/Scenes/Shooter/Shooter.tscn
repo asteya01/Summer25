@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxs3sovt53hl6"]
+[gd_scene load_steps=3 format=3 uid="uid://byu3irng80rwm"]
 
-[ext_resource type="Script" uid="uid://cg13bgdqi2e0w" path="res://Scenes/Shooter/Shooter.gd" id="1_081au"]
-[ext_resource type="AudioStream" uid="uid://6nwm1n3bwp3r" path="res://assets/sound/laser.wav" id="2_v8mo3"]
+[ext_resource type="Script" uid="uid://c77m12wg8vx41" path="res://Scenes/Shooter/Shooter.gd" id="1_081au"]
+[ext_resource type="AudioStream" uid="uid://cwq1bmgcidup0" path="res://assets/sound/laser.wav" id="2_v8mo3"]
 
 [node name="Shooter" type="Node2D"]
 script = ExtResource("1_081au")

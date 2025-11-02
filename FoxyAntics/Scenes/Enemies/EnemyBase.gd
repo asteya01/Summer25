@@ -7,11 +7,10 @@ class_name EnemyBase
 const FALL_OFF_Y: int = 200.0
 
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
 @export var points: int = 1
 @export var speed: float = 30.0
-
-
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
 var _gravity: float = 800.0
@@ -25,8 +24,7 @@ func _ready() -> void:
 		queue_free()
 
 
-
-func flip_me() -> void: 
+func flip_me() -> void:
 	animated_sprite_2d.flip_h = \
 		_player_ref.global_position.x > global_position.x
 

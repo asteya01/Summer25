@@ -1,15 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtha14qxvijhj"]
+[gd_scene load_steps=3 format=3 uid="uid://crmndmh2v5ufq"]
 
-[ext_resource type="Script" uid="uid://7ie3c1gfqfgd" path="res://Scenes/HighscoreDisplay/HighscoreDisplay.gd" id="1_8ewd1"]
-[ext_resource type="LabelSettings" uid="uid://cnuo20km3qiux" path="res://Resources/HighscoreDisplay.tres" id="1_hp87i"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_8ewd1"]
-font_size = 23
-font_color = Color(0.415986, 0.0948123, 0.69619, 1)
-outline_size = 2
-shadow_size = 12
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(4, 1)
+[ext_resource type="Script" uid="uid://dttt0bw2kh0kk" path="res://Scenes/HighscoreDisplay/HighscoreDisplay.gd" id="1_8ewd1"]
+[ext_resource type="LabelSettings" uid="uid://dy7eboyk1givc" path="res://Resources/HighscoreDisplay_24.tres" id="1_hp87i"]
 
 [node name="HighscoreDisplay" type="VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
@@ -19,7 +11,7 @@ script = ExtResource("1_8ewd1")
 
 [node name="ScoreLabel" type="Label" parent="."]
 layout_mode = 2
-text = "000"
+text = "00000"
 label_settings = ExtResource("1_hp87i")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -27,4 +19,6 @@ vertical_alignment = 1
 [node name="DateLabel" type="Label" parent="."]
 layout_mode = 2
 text = "00-00-00"
-label_settings = SubResource("LabelSettings_8ewd1")
+label_settings = ExtResource("1_hp87i")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -9,5 +9,4 @@ enum ObjectType {
 }
 
 
-
 const PLAYER_GROUP: String = "Player"

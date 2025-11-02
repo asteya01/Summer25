@@ -10,7 +10,7 @@ const HIGHSCORE_DISPLAY = preload("res://Scenes/HighscoreDisplay/HighscoreDispla
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot") == true:
 		GameManager.load_next_level()
- 
+
 
 func set_scores() -> void:
 	for score: HighScore in GameManager.high_scores.get_scores_list():

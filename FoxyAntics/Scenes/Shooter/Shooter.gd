@@ -7,11 +7,11 @@ class_name Shooter
 @export var speed: float = 50.0
 @export var shoot_delay: float = 0.7
 @export var bullet_key: Constants.ObjectType = \
-						Constants.ObjectType.BULLET_PLAYER
+							 Constants.ObjectType.BULLET_PLAYER
 
 @onready var shoot_timer: Timer = $ShootTimer
 @onready var sound: AudioStreamPlayer2D = $Sound
-	
+
 
 var _can_shoot: bool = true
 var _player_ref: Player
@@ -32,7 +32,7 @@ func shoot(direction: Vector2) -> void:
 	SignalHub.emit_on_create_bullet(
 		global_position,
 		direction,
-		speed,
+		speed, 
 		bullet_key
 	)
 	shoot_timer.start()
@@ -44,7 +44,7 @@ func shoot_at_player() -> void:
 		return
 	shoot(global_position.direction_to(
 		_player_ref.global_position
-		))
+	))
 
 
 func _on_shoot_timer_timeout() -> void:

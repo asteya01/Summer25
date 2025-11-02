@@ -1,20 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://cogyfjg18xd0x"]
+[gd_scene load_steps=6 format=3 uid="uid://dwngjiwloxxdy"]
 
-[ext_resource type="Script" uid="uid://b7e5d2myxye2d" path="res://Scenes/Main/Main.gd" id="1_o8wgc"]
-[ext_resource type="Texture2D" uid="uid://dvfjpsaukyxdp" path="res://assets/backgrounds/game_background_3/game_background_3. 2.png" id="1_p8rbg"]
-[ext_resource type="FontFile" uid="uid://iciskndr7lm0" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="2_qtv3y"]
-[ext_resource type="AudioStream" uid="uid://c1ji6abiqmnli" path="res://assets/sound/Farm Frolics.ogg" id="3_cmk6n"]
-[ext_resource type="PackedScene" uid="uid://dtha14qxvijhj" path="res://Scenes/HighscoreDisplay/HighscoreDisplay.tscn" id="4_i3fi7"]
+[ext_resource type="Script" uid="uid://de7stkqkl6pqm" path="res://Scenes/Main/Main.gd" id="1_i3fi7"]
+[ext_resource type="Texture2D" uid="uid://dsd3dox2s388t" path="res://assets/backgrounds/game_background_3/game_background_3. 2.png" id="1_p8rbg"]
+[ext_resource type="FontFile" uid="uid://cjflxvuruxu4a" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="2_qtv3y"]
+[ext_resource type="AudioStream" uid="uid://nq7sf2ablruu" path="res://assets/sound/Farm Frolics.ogg" id="3_cmk6n"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cmk6n"]
 font = ExtResource("2_qtv3y")
 font_size = 96
 font_color = Color(0.984314, 0.235294, 0.654902, 1)
-outline_size = 7
-outline_color = Color(0.164885, 0.000203016, 0.563364, 1)
-shadow_size = 15
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(10, 1)
+outline_size = 13
+outline_color = Color(0.231373, 0.729412, 1, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0.517647, 0.709804)
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -23,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_o8wgc")
+script = ExtResource("1_i3fi7")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -51,13 +49,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -272.5
-offset_top = -96.5
-offset_right = 272.5
-offset_bottom = 0.5
+offset_left = -272.0
+offset_top = -48.0
+offset_right = 273.0
+offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 0.126041
 text = "FOXY ANTICS"
 label_settings = SubResource("LabelSettings_cmk6n")
 horizontal_alignment = 1
@@ -65,6 +62,7 @@ vertical_alignment = 1
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_cmk6n")
+volume_db = -10.0
 autoplay = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -82,35 +80,5 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/h_separation = 16
-theme_override_constants/v_separation = 17
+theme_override_constants/v_separation = 12
 columns = 5
-
-[node name="HighscoreDisplay" parent="MarginContainer/GridContainer" instance=ExtResource("4_i3fi7")]
-layout_mode = 2
-
-[node name="HighscoreDisplay2" parent="MarginContainer/GridContainer" instance=ExtResource("4_i3fi7")]
-layout_mode = 2
-
-[node name="HighscoreDisplay3" parent="MarginContainer/GridContainer" instance=ExtResource("4_i3fi7")]
-layout_mode = 2
-
-[node name="HighscoreDisplay4" parent="MarginContainer/GridContainer" instance=ExtResource("4_i3fi7")]
-layout_mode = 2
-
-[node name="HighscoreDisplay5" parent="MarginContainer/GridContainer" instance=ExtResource("4_i3fi7")]
-layout_mode = 2
-
-[node name="HighscoreDisplay6" parent="MarginContainer/GridContainer" instance=ExtResource("4_i3fi7")]
-layout_mode = 2
-
-[node name="HighscoreDisplay7" parent="MarginContainer/GridContainer" instance=ExtResource("4_i3fi7")]
-layout_mode = 2
-
-[node name="HighscoreDisplay8" parent="MarginContainer/GridContainer" instance=ExtResource("4_i3fi7")]
-layout_mode = 2
-
-[node name="HighscoreDisplay9" parent="MarginContainer/GridContainer" instance=ExtResource("4_i3fi7")]
-layout_mode = 2
-
-[node name="HighscoreDisplay10" parent="MarginContainer/GridContainer" instance=ExtResource("4_i3fi7")]
-layout_mode = 2

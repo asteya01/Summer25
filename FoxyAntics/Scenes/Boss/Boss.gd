@@ -9,7 +9,7 @@ extends Node2D
 @onready var hit_box: Area2D = $Visuals/HitBox
 @onready var shooter: Shooter = $Visuals/Shooter
 @onready var state_machine: AnimationNodeStateMachinePlayback = \
-		$AnimationTree["parameters/playback"]
+				$AnimationTree["parameters/playback"]
 @onready var visuals: Node2D = $Visuals
 
 

@@ -1,19 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0ky3j05gwqeb"]
+[gd_scene load_steps=5 format=3 uid="uid://b55hjoi1vfbcm"]
 
-[ext_resource type="LabelSettings" uid="uid://dea2jlx2jyccd" path="res://Resources/ScoreDisplay.tres" id="1_vvs1i"]
-[ext_resource type="Script" uid="uid://cq1ee3rbhnv4w" path="res://Scenes/Hud/Hud.gd" id="1_xymhr"]
-[ext_resource type="Texture2D" uid="uid://dldyaj1f5pw5u" path="res://assets/items/pixel heart 2.png" id="2_iteex"]
-[ext_resource type="LabelSettings" uid="uid://ku5gpe2lpxg2" path="res://Resources/GameOverDisplay.tres" id="4_bbjj2"]
-[ext_resource type="FontFile" uid="uid://iciskndr7lm0" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="5_ysf55"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_ighhf"]
-font = ExtResource("5_ysf55")
-font_size = 56
-font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
-outline_size = 5
-shadow_size = 9
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(4, 1)
+[ext_resource type="LabelSettings" uid="uid://cx6tq4yctswh" path="res://Resources/ScoreDisplay_48.tres" id="1_vvs1i"]
+[ext_resource type="Script" uid="uid://ot4polxafspn" path="res://Scenes/Hud/Hud.gd" id="1_xymhr"]
+[ext_resource type="Texture2D" uid="uid://cu00luegddv67" path="res://assets/items/pixel heart 2.png" id="2_iteex"]
+[ext_resource type="LabelSettings" uid="uid://ct1tmv11wo015" path="res://Resources/HugDisplay_96.tres" id="4_bbjj2"]
 
 [node name="Hud" type="Control"]
 process_mode = 3
@@ -23,28 +13,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_xymhr")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-process_mode = 3
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
-theme_override_constants/margin_left = 36
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
 
 [node name="ScoreLabel" type="Label" parent="MarginContainer"]
-process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "000"
+text = "00000"
 label_settings = ExtResource("1_vvs1i")
 
 [node name="HBHearts" type="HBoxContainer" parent="MarginContainer"]
-process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -82,20 +70,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.003921569, 0.09803922, 0.8666667)
+mouse_filter = 2
+color = Color(0, 0.00392157, 0.0980392, 0.866667)
 
 [node name="VBGameOver" type="VBoxContainer" parent="ColorRect"]
 visible = false
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -255.0
-offset_top = -48.5
+offset_top = -73.0
 offset_right = 255.0
-offset_bottom = 48.5
+offset_bottom = 77.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -109,25 +98,26 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="ColorRect/VBGameOver"]
 layout_mode = 2
-text = "PRESS SPACE"
-label_settings = SubResource("LabelSettings_ighhf")
+text = "Press Space"
+label_settings = ExtResource("1_vvs1i")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VBComplete" type="VBoxContainer" parent="ColorRect"]
 visible = false
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -255.0
-offset_top = -48.5
-offset_right = 255.0
-offset_bottom = 48.5
+offset_left = -43.5
+offset_top = -20.0
+offset_right = 43.5
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="ColorRect/VBComplete"]
 layout_mode = 2
@@ -139,8 +129,8 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="ColorRect/VBComplete"]
 layout_mode = 2
-text = "PRESS SPACE"
-label_settings = SubResource("LabelSettings_ighhf")
+text = "Press Shoot"
+label_settings = ExtResource("1_vvs1i")
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -2,7 +2,7 @@ extends PathFollow2D
 
 
 @export var speed: float = 50.0
-@export var spin_speed: float = 360.0       
+@export var spin_speed: float = 360
 
 
 

@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 func reset_camera() -> void:
 	set_process(false)
 	offset = Vector2.ZERO
-
+	
 
 
 func on_player_hit(lives: int, shake: bool) -> void:

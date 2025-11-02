@@ -1,0 +1,11 @@
+res://Scenes/Main/Main.tscn
+res://Resources/LevelTiles.tres
+res://Scenes/Player/Player.tscn
+res://Scenes/Checkpoint/Checkpoint.gd
+res://Scenes/Enemies/Eagle/Eagle.gd
+res://Scenes/Enemies/EnemyBase.gd
+res://Scenes/Enemies/Frog/Frog.gd
+res://Scenes/Player/Player.gd
+res://Scenes/LevelBase/Level2.tscn
+res://Scenes/Hud/Hud.tscn
+res://Scenes/LevelBase/Level1.tscn
