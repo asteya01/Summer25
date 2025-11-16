@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bwv1faocuuvxr"]
+
+[ext_resource type="FontFile" uid="uid://c77sl0tonv5ti" path="res://assets/slkscrb.ttf" id="1_a6ioa"]
+
+[resource]
+font = ExtResource("1_a6ioa")
+font_size = 80
+font_color = Color(0.88235295, 1, 1, 1)
+outline_size = 10
+outline_color = Color(0.9896236, 0.0023360741, 1.92523e-06, 1)
