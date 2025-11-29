@@ -5,6 +5,7 @@ class_name LevelButton
 
 
 @onready var level_label = $LevelLabel
+@onready var check_mark = $CheckMark
 
 
 var _level_number: String = "99"
@@ -13,6 +14,7 @@ var _level_number: String = "99"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	level_label.text = _level_number
+	check_mark.visible = GameManager.has_level_score(_level_number)
 
 
 func setup(ln: String) -> void:

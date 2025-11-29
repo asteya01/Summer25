@@ -1,0 +1,162 @@
+[gd_scene load_steps=9 format=3 uid="uid://cnhnct7qimpna"]
+
+[ext_resource type="Script" uid="uid://runq042ickmx" path="res://Scenes/GameUi/GameUi.gd" id="1_anb74"]
+[ext_resource type="LabelSettings" uid="uid://647g8x4upuh7" path="res://Resources/NormalLabel18.tres" id="1_mb7aw"]
+[ext_resource type="Texture2D" uid="uid://cugkabibft5en" path="res://assets/panel_beigeLight.png" id="3_anolp"]
+[ext_resource type="FontFile" uid="uid://c77sl0tonv5ti" path="res://assets/slkscrb.ttf" id="4_tt7lr"]
+[ext_resource type="FontFile" uid="uid://curesvrgm6lue" path="res://assets/LilliputSteps.ttf" id="5_5hvfd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5hvfd"]
+font = ExtResource("4_tt7lr")
+font_size = 45
+font_color = Color(0.88235295, 1, 1, 1)
+outline_size = 10
+outline_color = Color(0.9896236, 0.0023360741, 1.92523e-06, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cfi2h"]
+font = ExtResource("5_5hvfd")
+font_size = 32
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ldyld"]
+font = ExtResource("5_5hvfd")
+font_size = 32
+outline_size = 9
+outline_color = Color(0.61596406, 0.3300148, 1, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="GameUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_anb74")
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+
+[node name="VB" type="VBoxContainer" parent="MC"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="HB" type="HBoxContainer" parent="MC/VB"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MC/VB/HB"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "Level:"
+label_settings = ExtResource("1_mb7aw")
+vertical_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="MC/VB/HB"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("1_mb7aw")
+vertical_alignment = 1
+
+[node name="HB2" type="HBoxContainer" parent="MC/VB"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MC/VB/HB2"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "Steps:"
+label_settings = ExtResource("1_mb7aw")
+vertical_alignment = 1
+
+[node name="MovesLabel" type="Label" parent="MC/VB/HB2"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("1_mb7aw")
+vertical_alignment = 1
+
+[node name="HB3" type="HBoxContainer" parent="MC/VB"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MC/VB/HB3"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "Best:"
+label_settings = ExtResource("1_mb7aw")
+vertical_alignment = 1
+
+[node name="BestLabel" type="Label" parent="MC/VB/HB3"]
+layout_mode = 2
+text = "-"
+label_settings = ExtResource("1_mb7aw")
+vertical_alignment = 1
+
+[node name="GameOverNpr" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -180.0
+offset_right = 280.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_anolp")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="MC" type="MarginContainer" parent="GameOverNpr"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VB" type="VBoxContainer" parent="GameOverNpr/MC"]
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="Label" type="Label" parent="GameOverNpr/MC/VB"]
+layout_mode = 2
+text = "LEVEL COMPLETE!"
+label_settings = SubResource("LabelSettings_5hvfd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VB" type="VBoxContainer" parent="GameOverNpr/MC/VB"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MovesLabel" type="Label" parent="GameOverNpr/MC/VB/VB"]
+layout_mode = 2
+text = "YOU TOOK *** STEPS"
+label_settings = SubResource("LabelSettings_cfi2h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RecordLabel" type="Label" parent="GameOverNpr/MC/VB/VB"]
+visible = false
+layout_mode = 2
+text = "A NEW RECORD!"
+label_settings = SubResource("LabelSettings_ldyld")
+horizontal_alignment = 1
+vertical_alignment = 1

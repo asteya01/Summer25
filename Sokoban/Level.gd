@@ -4,13 +4,13 @@ extends Node2D
 const SOURCE_ID: int = 0
 
 
-@onready var tile_layers = $TileLayers
-@onready var floor_tiles = $TileLayers/Floor
-@onready var walls_tiles = $TileLayers/Walls
-@onready var targets_tiles = $TileLayers/Targets
-@onready var boxes_tiles = $TileLayers/Boxes
-@onready var camera_2d = $Camera2D
-@onready var player = $Player
+@onready var tile_layers: Node2D = $TileLayers
+@onready var floor_tiles: TileMapLayer = $TileLayers/Floor
+@onready var walls_tiles: TileMapLayer = $TileLayers/Walls
+@onready var targets_tiles: TileMapLayer = $TileLayers/Targets
+@onready var boxes_tiles: TileMapLayer = $TileLayers/Boxes
+@onready var camera_2d: Camera2D = $Camera2D
+@onready var player: AnimatedSprite2D = $Player
 @onready var game_ui: GameUi = $CanvasLayer2/GameUi
 
 
@@ -44,7 +44,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("reload"):
 		get_tree().reload_current_scene()
 	
-	
 	if _game_over:
 		return
 		
@@ -57,11 +56,11 @@ func cell_is_wall(cell: Vector2i) -> bool:
 	return cell in walls_tiles.get_used_cells()
 
 
-func cell_is_box (cell: Vector2i) -> bool:
+func cell_is_box(cell: Vector2i) -> bool:
 	return cell in boxes_tiles.get_used_cells()
 
 
-func cell_is_empty (cell: Vector2i) -> bool:
+func cell_is_empty(cell: Vector2i) -> bool:
 	return !cell_is_box(cell) and !cell_is_wall(cell)
 
 
@@ -80,6 +79,7 @@ func move_box(box_tile: Vector2i, md: Vector2i) -> void:
 	
 	boxes_tiles.set_cell(dest, SOURCE_ID, get_atlas_coord(tlt))
 
+
 func check_game_state() -> void:
 	for t in targets_tiles.get_used_cells():
 		if !cell_is_box(t):
@@ -87,7 +87,6 @@ func check_game_state() -> void:
 	_game_over = true
 	var best: bool = GameManager.level_completed(_level, _moves_made)
 	game_ui.game_over(_moves_made, best)
-
 
 func player_move(md: Vector2i) -> void:
 	var dest: Vector2i = _player_tile + md
@@ -149,10 +148,10 @@ func clear_tiles() -> void:
 	for tl in tile_layers.get_children():
 		tl.clear()
 
-func move_camera() -> void:
+
+func move_camera() -> void:	
 	var tmr: Rect2i = floor_tiles.get_used_rect()
 	camera_2d.position = tmr.get_center() * _tile_size
-
 
 
 func setup_level() -> void:
@@ -169,3 +168,8 @@ func setup_level() -> void:
 	place_player_on_tile(level_layout.get_player_start())
 	
 	move_camera()
+
+
+
+func ph():
+	pass
